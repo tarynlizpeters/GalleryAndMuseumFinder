@@ -14,6 +14,9 @@
 		952C0C6D1C739183005BC9E7 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952C0C6C1C739183005BC9E7 /* ListViewController.swift */; };
 		952C0C6F1C7391F6005BC9E7 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952C0C6E1C7391F6005BC9E7 /* DetailViewController.swift */; };
 		952C0C711C73992D005BC9E7 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952C0C701C73992D005BC9E7 /* CommentViewController.swift */; };
+		DF36376F1C74E0000067D39B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF36376E1C74E0000067D39B /* MapKit.framework */; };
+		DF3637711C74E00C0067D39B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF3637701C74E00C0067D39B /* CoreLocation.framework */; };
+		DF3637731C74E0130067D39B /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF3637721C74E0130067D39B /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		952C0C6C1C739183005BC9E7 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListViewController.swift; path = ../ListViewController.swift; sourceTree = "<group>"; };
 		952C0C6E1C7391F6005BC9E7 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		952C0C701C73992D005BC9E7 /* CommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
+		DF36376E1C74E0000067D39B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		DF3637701C74E00C0067D39B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		DF3637721C74E0130067D39B /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +39,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF3637731C74E0130067D39B /* CloudKit.framework in Frameworks */,
+				DF3637711C74E00C0067D39B /* CoreLocation.framework in Frameworks */,
+				DF36376F1C74E0000067D39B /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +51,9 @@
 		952C0C4E1C738DCF005BC9E7 = {
 			isa = PBXGroup;
 			children = (
+				DF3637721C74E0130067D39B /* CloudKit.framework */,
+				DF3637701C74E00C0067D39B /* CoreLocation.framework */,
+				DF36376E1C74E0000067D39B /* MapKit.framework */,
 				952C0C591C738DCF005BC9E7 /* GalleryandMuseumFinder */,
 				952C0C581C738DCF005BC9E7 /* Products */,
 			);
@@ -292,6 +304,7 @@
 				952C0C6B1C738DCF005BC9E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
