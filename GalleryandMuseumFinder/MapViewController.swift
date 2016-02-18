@@ -1,23 +1,23 @@
 //
-//  DetailViewController.swift
+//  MapViewController.swift
 //  GalleryandMuseumFinder
 //
-//  Created by Taryn Parker on 2/16/16.
+//  Created by Danny Vasquez on 2/18/16.
 //  Copyright © 2016 Mobile Makers. All rights reserved.
 //
 
 import UIKit
+import MapKit
 
-class DetailViewController: UIViewController {
+class MapViewController: UIViewController {
+    @IBOutlet weak var mapView: MKMapView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
 
-    
-    
-    
+
     @IBAction func onSignOutTapped(sender: AnyObject) {
         //unauth() is the logout method for the current user.
         DataService.dataService.CURRENT_USER_REF.unauth()
@@ -31,9 +31,4 @@ class DetailViewController: UIViewController {
         print("method firing")
 
     }
-    
-    
-    
-    
-
 }

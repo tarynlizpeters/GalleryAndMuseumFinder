@@ -4,8 +4,6 @@
  use_frameworks!
 
 target 'GalleryandMuseumFinder' do
-    pod 'AFNetworking', '~> 2.5'
-    pod 'BDBOAuth1Manager'
-
+    pod 'Firebase', '>= 2.5.0'
 end
 
