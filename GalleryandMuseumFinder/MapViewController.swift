@@ -7,29 +7,106 @@
 //
 
 import UIKit
-import MapKit
 import GoogleMaps
+import CoreLocation
 
-class MapViewController: UIViewController {
-    @IBOutlet weak var mapView: MKMapView!
+class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate  {
+    
+   // @IBOutlet weak var googleMapView: GMSMapView!
+    var googleMapView = GMSMapView()
+   
+    var placesClient: GMSPlacesClient?
+    var locationManager = CLLocationManager()
+    let marker = GMSMarker()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let camera = GMSCameraPosition.cameraWithLatitude(-33.86,
-            longitude: 151.20, zoom: 6)
-        let mapView = GMSMapView.mapWithFrame(CGRectZero, camera: camera)
-        mapView.myLocationEnabled = true
-        self.view = mapView
+        locationManager.delegate = self
+    
+        locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
+        locationManager.distanceFilter = 500
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        self.view = googleMapView
+
+        
+        let camera = GMSCameraPosition.cameraWithLatitude(41.889736,
+            longitude: -87.63209, zoom: 10.0)
+        googleMapView = GMSMapView.mapWithFrame(CGRectZero, camera: camera)
+        googleMapView.myLocationEnabled = true
+        googleMapView.camera = camera
         
         let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2DMake(-33.86, 151.20)
-        marker.title = "Sydney"
-        marker.snippet = "Australia"
-        marker.map = mapView
+        marker.position = CLLocationCoordinate2DMake(41.889736, -87.63209 )
+        marker.title = "Chicago"
+        marker.snippet = "Illinois"
+        marker.map = googleMapView
     }
+    
 
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+            if status == .AuthorizedWhenInUse {
+                googleMapView.myLocationEnabled = true
+            }
+            
+        }
+    
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let newLocation = locations.last {
+            googleMapView.camera = GMSCameraPosition.cameraWithTarget(newLocation.coordinate, zoom: 15.0)
+            googleMapView.settings.myLocationButton = true
+            self.view = self.googleMapView
+            marker.position = CLLocationCoordinate2DMake(newLocation.coordinate.latitude, newLocation.coordinate.longitude)
+            marker.map = self.googleMapView
+        }
+    }
+    
+    
+    
+//    override func viewWillAppear(animated: Bool) {
+//        googleMapView .addObserver(self, forKeyPath: "myLocation", options: 0, context: nil)
+//        
+//        func dealloc (){
+//        googleMapView .removeObserver(self, forKeyPath: "myLocation")
+//        }
+//    }
+//    
+//    func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+//        if keyPath == "myLocation" {
+//            myLocation = location.CLLocation
+//            
+//            CLLocationCoordinate2D target =
+//        }
+//    }
 
+//    @IBAction func button(sender: UIBarButtonItem) {
+//        placesClient?.currentPlaceWithCallback({
+//            (placeLikelihoodList: GMSPlaceLikelihoodList?, error: NSError?) -> Void in
+//            if let error = error {
+//                print("Pick Place error: \(error.localizedDescription)")
+//                return
+//            }
+//            
+//            self.nameLabel.text = "No current place"
+//            self.addressLabel.text = ""
+//            
+//            if let placeLikelihoodList = placeLikelihoodList {
+//                let place = placeLikelihoodList.likelihoods.first?.place
+//                if let place = place {
+//                    self.nameLabel.text = place.name
+//                    self.addressLabel.text = place.formattedAddress.componentsSeparatedByString(", ")
+//                        .joinWithSeparator("\n")
+//                }
+//            }
+//        })
+//    }
+
+    
+
+        
+    
 
     @IBAction func onSignOutTapped(sender: AnyObject) {
         //unauth() is the logout method for the current user.
@@ -45,3 +122,12 @@ class MapViewController: UIViewController {
 
     }
 }
+
+
+    
+
+    
+
+
+
+

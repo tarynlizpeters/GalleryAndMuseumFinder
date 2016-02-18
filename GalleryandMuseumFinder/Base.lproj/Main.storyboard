@@ -593,21 +593,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Lto-Yb-spj">
-                                <rect key="frame" x="0.0" y="58" width="600" height="247"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="EGl-vv-2Gh">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="247" id="vA2-zh-pEW"/>
+                                    <constraint firstAttribute="height" constant="254" id="M9P-9a-ztq"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="M9P-9a-ztq"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="M9P-9a-ztq"/>
+                                    </mask>
+                                </variation>
                                 <connections>
-                                    <outlet property="delegate" destination="q2u-FD-gGw" id="iua-v3-aUR"/>
+                                    <outlet property="delegate" destination="q2u-FD-gGw" id="REA-jE-olu"/>
                                 </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Lto-Yb-spj" firstAttribute="top" secondItem="bK2-lx-udL" secondAttribute="topMargin" constant="58" id="Gpf-Kj-Juc"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Lto-Yb-spj" secondAttribute="trailing" constant="-20" id="reW-Bt-yWr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="EGl-vv-2Gh" secondAttribute="trailing" constant="-20" id="aiH-Ob-lAe"/>
+                            <constraint firstItem="EGl-vv-2Gh" firstAttribute="top" secondItem="bK2-lx-udL" secondAttribute="topMargin" constant="58" id="z1m-mJ-3AY"/>
+                            <constraint firstItem="EGl-vv-2Gh" firstAttribute="leading" secondItem="bK2-lx-udL" secondAttribute="leadingMargin" constant="-20" id="zyI-6J-mVL"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="EGl-vv-2Gh"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="aiH-Ob-lAe"/>
+                                <exclude reference="z1m-mJ-3AY"/>
+                                <exclude reference="zyI-6J-mVL"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="EGl-vv-2Gh"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="aiH-Ob-lAe"/>
+                                <include reference="z1m-mJ-3AY"/>
+                                <include reference="zyI-6J-mVL"/>
+                            </mask>
+                        </variation>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="cgS-OR-vZr">
@@ -619,12 +650,12 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="mapView" destination="Lto-Yb-spj" id="xXh-E6-RyJ"/>
+                        <outlet property="googleMapView" destination="EGl-vv-2Gh" id="Lpi-8S-oLW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IFB-U6-1kg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="230" y="1012"/>
+            <point key="canvasLocation" x="484.5" y="1069"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SIA-xU-b5z">
