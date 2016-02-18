@@ -112,11 +112,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // remember user's login
         let username : String? = NSUserDefaults.standardUserDefaults().stringForKey("uid")
         
-        // if loged in
+//         if loged in
         if username != nil {
-            
+        
             let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let myTabBar = storyboard.instantiateViewControllerWithIdentifier("tabBar") as! UINavigationController
+            let myTabBar = storyboard.instantiateViewControllerWithIdentifier("mapVC")
             window?.rootViewController = myTabBar
         }
         
