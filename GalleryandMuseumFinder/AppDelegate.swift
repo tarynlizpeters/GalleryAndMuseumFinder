@@ -10,17 +10,49 @@ import UIKit
 import Firebase
 import CoreData
 import GoogleMaps
+import Google
+
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate  {
 
     var window: UIWindow?
-
-
+    
+    
+    func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
+        return GIDSignIn.sharedInstance().handleURL(url,
+            sourceApplication: options[UIApplicationOpenURLOptionsSourceApplicationKey] as! String,
+            annotation: options[UIApplicationOpenURLOptionsAnnotationKey])
+    }
+    
+    func signIn(signIn: GIDSignIn!, didSignInForUser user: GIDGoogleUser!, withError error: NSError!) {
+        if error == nil {
+            // Perform any operations on signed in user here.
+            let userId = user.userID                  // For client-side use only!
+            let idToken = user.authentication.idToken // Safe to send to the server
+            let name = user.profile.name
+            let email = user.profile.email
+            // ...
+        }else {
+            print("\(error.localizedDescription)")
+        }
+    }
+    
+    
+    func signIn(signIn: GIDSignIn!, didDisconnectWithUser user: GIDGoogleUser!, withError error: NSError!) {
+        // Perform any operations when the user disconnects from app here.
+        // ...
+    }
+    
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-       
         GMSServices.provideAPIKey("AIzaSyDUwrY1h6zZuVWvtvO9-tNcgz6sW361UrU")
-      
+        var configureError: NSError?
+        GGLContext.sharedInstance().configureWithError(&configureError)
+        assert(configureError == nil, "Error configuring Google services: \(configureError)")
+        
+        GIDSignIn.sharedInstance().delegate = self
+
         return true
     }
 
