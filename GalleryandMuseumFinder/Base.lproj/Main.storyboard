@@ -498,14 +498,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gallery &amp; Museum Finder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rgQ-MR-CCD">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gallery &amp; Museum Finder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rgQ-MR-CCD">
                                 <rect key="frame" x="20" y="20" width="560" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="560" id="X5Z-Ht-yjx"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mw4-4k-18s">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mw4-4k-18s">
                                 <rect key="frame" x="20" y="79" width="560" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="560" id="EuB-6c-4do"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -556,6 +562,14 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="mw4-4k-18s" secondAttribute="trailing" constant="20" id="Akx-W5-ut9"/>
+                            <constraint firstAttribute="trailing" secondItem="rgQ-MR-CCD" secondAttribute="trailing" constant="20" id="IXY-Ej-D3v"/>
+                            <constraint firstItem="rgQ-MR-CCD" firstAttribute="top" secondItem="VIM-qf-UjP" secondAttribute="bottom" id="RGf-96-By5"/>
+                            <constraint firstItem="mw4-4k-18s" firstAttribute="leading" secondItem="rRj-3F-aQ9" secondAttribute="leading" constant="20" id="YCd-yG-JFj"/>
+                            <constraint firstItem="rgQ-MR-CCD" firstAttribute="leading" secondItem="rRj-3F-aQ9" secondAttribute="leading" constant="20" id="e5U-n3-qyV"/>
+                            <constraint firstItem="mw4-4k-18s" firstAttribute="top" secondItem="rgQ-MR-CCD" secondAttribute="bottom" constant="38" id="lPv-VI-fPu"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="mw4-4k-18s" id="jFx-gX-pp5"/>
@@ -565,7 +579,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bGz-yq-Ijp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1428" y="291"/>
+            <point key="canvasLocation" x="-1420" y="291"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="Vnm-Za-FYj">
