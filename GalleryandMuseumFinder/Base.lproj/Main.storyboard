@@ -551,6 +551,9 @@
                                     <constraint firstAttribute="width" constant="55" id="fkq-rF-osN"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="twitt2"/>
+                                <connections>
+                                    <action selector="onTwitterTapped:" destination="qxl-yM-6TG" eventType="touchUpInside" id="a56-eL-MSf"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

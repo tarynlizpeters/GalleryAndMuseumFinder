@@ -16,15 +16,24 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     
     var ref: Firebase!
-//    var acccounts: [ACAccount]!
-    
+    var authHelper: TwitterAuthHelper!
+    var accounts: [ACAccount]!
+    var account = ACAccount()
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        ref = Firebase(url: "gallerynmuseumfinder.firebaseIO.com")
     }
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        ref = Firebase(url: "gallerynmuseumfinder.firebaseIO.com")
+        authHelper = TwitterAuthHelper(firebaseRef: ref, apiKey: "tpRrduRnsnj5Ehk3BR0z4lGAS")
+    }
+    
+    
+    
 
     @IBAction func onLoginTapped(sender: AnyObject) {
         let email = emailTextField.text
@@ -61,11 +70,9 @@ class LoginViewController: UIViewController {
     }
     
     
-    
-    
-    
-    
-    
+    @IBAction func onTwitterTapped(sender: AnyObject) {
+        self.authWithTwitter()
+    }
     
     func loginErrorAlert(title: String, message: String) {
         // called upon login error to let the user know login didn't work
@@ -74,9 +81,5 @@ class LoginViewController: UIViewController {
         alert.addAction(action)
         presentViewController(alert, animated: true, completion: nil)
     }
-
-    
-    
-    
 
 }
