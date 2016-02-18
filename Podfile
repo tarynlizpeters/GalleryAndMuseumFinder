@@ -6,5 +6,6 @@ use_frameworks!
 target 'GalleryandMuseumFinder' do
     pod 'Firebase', '>= 2.5.0'
     pod 'GoogleMaps'
+    pod 'Google/SignIn'
 end
 

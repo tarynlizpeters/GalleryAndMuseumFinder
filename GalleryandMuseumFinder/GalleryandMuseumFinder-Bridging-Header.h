@@ -4,3 +4,4 @@
 #import <Firebase/Firebase.h>
 #import "TwitterAuthHelper.h"
 #import <GoogleMaps/GoogleMaps.h>
+#import <Google/SignIn.h>
