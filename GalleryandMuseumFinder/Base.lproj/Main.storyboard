@@ -593,11 +593,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Lto-Yb-spj">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Lto-Yb-spj">
+                                <rect key="frame" x="0.0" y="58" width="600" height="247"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="247" id="vA2-zh-pEW"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="q2u-FD-gGw" id="iua-v3-aUR"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Lto-Yb-spj" firstAttribute="top" secondItem="bK2-lx-udL" secondAttribute="topMargin" constant="58" id="Gpf-Kj-Juc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Lto-Yb-spj" secondAttribute="trailing" constant="-20" id="reW-Bt-yWr"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="cgS-OR-vZr">
@@ -614,7 +624,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IFB-U6-1kg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="352" y="1018"/>
+            <point key="canvasLocation" x="230" y="1012"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SIA-xU-b5z">
@@ -650,7 +660,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lpz-8B-ktt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-460" y="1018"/>
+            <point key="canvasLocation" x="-521" y="1069"/>
         </scene>
     </scenes>
     <resources>
