@@ -596,6 +596,16 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="cgS-OR-vZr">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="RJa-sN-oDt">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Fog-Ga-OiI">
+                                <rect key="frame" x="20" y="7" width="133" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="showPlacePicker:" destination="q2u-FD-gGw" eventType="touchUpInside" id="KV2-SE-xha"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Sign out" id="G5R-fL-QNA">
                             <connections>
                                 <action selector="onSignOutTapped:" destination="q2u-FD-gGw" id="1il-j7-ha9"/>
