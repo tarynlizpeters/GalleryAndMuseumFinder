@@ -92,17 +92,9 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     }
     
     
-    func signIn(signIn: GIDSignIn!, didSignInForUser user: GIDGoogleUser!,
-        withError error: NSError!) {
-            if (error == nil) {
-                performSegueWithIdentifier("EnterAppSegue", sender: nil)
-                // Perform any operations on signed in user here.
-                // ...
-            } else {
-                print("\(error.localizedDescription)")
-            }
+    func signIn(signIn: GIDSignIn!, presentViewController viewController: UIViewController!) {
+//        performSegueWithIdentifier("EnterAppSegue", sender: nil)
     }
-
     
     
 

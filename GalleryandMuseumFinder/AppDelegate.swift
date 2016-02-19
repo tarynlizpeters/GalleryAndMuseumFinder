@@ -11,7 +11,6 @@ import Firebase
 import CoreData
 import GoogleMaps
 import Google
-var log: LoginViewController!
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate  {
