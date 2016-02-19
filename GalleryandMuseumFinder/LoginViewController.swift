@@ -8,9 +8,10 @@
 
 import UIKit
 import Firebase
+import Google
+class LoginViewController: UIViewController, GIDSignInUIDelegate {
 
-class LoginViewController: UIViewController {
-
+    @IBOutlet weak var signInButton: GIDSignInButton!
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -24,6 +25,11 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().clientID = "127355499536-pv12ejdoe0fqc10lguablhojhqs7vods.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance().scopes.append("https://www.googleapis.com/auth/plus.login")
+        GIDSignIn.sharedInstance().scopes.append("https://www.googleapis.com/auth/plus.me")
+
     }
     
     
@@ -81,5 +87,13 @@ class LoginViewController: UIViewController {
         alert.addAction(action)
         presentViewController(alert, animated: true, completion: nil)
     }
+    
+    
+    
+    
+    
+    
+    
+    
 
 }

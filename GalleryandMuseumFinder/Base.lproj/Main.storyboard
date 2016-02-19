@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -542,10 +543,6 @@
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97U-H5-8nf">
-                                <rect key="frame" x="208" y="343" width="100" height="46"/>
-                                <state key="normal" title="Button" image="fb"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="enZ-f4-fXl">
                                 <rect key="frame" x="20" y="550" width="560" height="30"/>
                                 <state key="normal" title="Don't have an account? Register now!"/>
@@ -560,6 +557,10 @@
                                     <action selector="onTwitterTapped:" destination="qxl-yM-6TG" eventType="touchUpInside" id="a56-eL-MSf"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u22-ZH-yig" customClass="GIDSignInButton">
+                                <rect key="frame" x="179" y="340" width="137" height="44"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -574,6 +575,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="mw4-4k-18s" id="jFx-gX-pp5"/>
                         <outlet property="passwordTextField" destination="rbw-hY-7Dk" id="qbm-4J-s2P"/>
+                        <outlet property="signInButton" destination="u22-ZH-yig" id="goR-xY-RuZ"/>
                         <segue destination="UY1-CO-J5z" kind="show" identifier="EnterApp" id="DOo-gg-NfN"/>
                     </connections>
                 </viewController>
@@ -695,7 +697,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="fb" width="100" height="46"/>
         <image name="twitt2" width="300" height="300"/>
     </resources>
 </document>
