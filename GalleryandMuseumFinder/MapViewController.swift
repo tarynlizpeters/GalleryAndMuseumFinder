@@ -2,7 +2,7 @@
 //  MapViewController.swift
 //  GalleryandMuseumFinder
 //
-//  Created by Danny Vasquez on 2/18/16.
+//  Created by Danny Vasquez and Joseph Mouer on 2/18/16.
 //  Copyright © 2016 Mobile Makers. All rights reserved.
 //
 
@@ -10,11 +10,15 @@ import UIKit
 import GoogleMaps
 import CoreLocation
 import Google
-class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate, GIDSignInUIDelegate  {
-    
-   // @IBOutlet weak var googleMapView: GMSMapView!
+class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate, GIDSignInUIDelegate  {    
     var googleMapView = GMSMapView()
-   
+    var placePicker: GMSPlacePicker!
+    var latitude: Double!
+    var longitude: Double!
+
+    @IBOutlet var mapViewContainer: UIView!
+
+    
     var placesClient: GMSPlacesClient?
     var locationManager = CLLocationManager()
     let marker = GMSMarker()
@@ -25,24 +29,26 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         locationManager.delegate = self
     
         locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
-        locationManager.distanceFilter = 500
+        locationManager.distanceFilter = 10
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
-        self.view = googleMapView
 
-        
-        let camera = GMSCameraPosition.cameraWithLatitude(41.889736,
-            longitude: -87.63209, zoom: 10.0)
-        googleMapView = GMSMapView.mapWithFrame(CGRectZero, camera: camera)
         googleMapView.myLocationEnabled = true
-        googleMapView.camera = camera
+
+        self.view.addSubview(googleMapView)
         
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2DMake(41.889736, -87.63209 )
-        marker.title = "Chicago"
-        marker.snippet = "Illinois"
-        marker.map = googleMapView
+      //  let marker = GMSMarker()
+        
+        
+        //marker.map = googleMapView
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.googleMapView.animateToZoom(18.0)
+        self.view.addSubview(googleMapView)
+    }
+    
     
 
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
@@ -53,60 +59,27 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         }
     
     
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let newLocation = locations.last {
-            googleMapView.camera = GMSCameraPosition.cameraWithTarget(newLocation.coordinate, zoom: 15.0)
-            googleMapView.settings.myLocationButton = true
-            self.view = self.googleMapView
-            marker.position = CLLocationCoordinate2DMake(newLocation.coordinate.latitude, newLocation.coordinate.longitude)
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
+            // 1
+            let location:CLLocation = locations.last!
+            self.latitude = location.coordinate.latitude
+            self.longitude = location.coordinate.longitude
+            
+            // 2
+            let coordinates = CLLocationCoordinate2DMake(self.latitude, self.longitude)
+            let marker = GMSMarker(position: coordinates)
+            marker.title = "I am here"
             marker.map = self.googleMapView
-        }
+            self.googleMapView.animateToLocation(coordinates)
     }
     
+   
     
-    
-//    override func viewWillAppear(animated: Bool) {
-//        googleMapView .addObserver(self, forKeyPath: "myLocation", options: 0, context: nil)
-//        
-//        func dealloc (){
-//        googleMapView .removeObserver(self, forKeyPath: "myLocation")
-//        }
-//    }
-//    
-//    func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
-//        if keyPath == "myLocation" {
-//            myLocation = location.CLLocation
-//            
-//            CLLocationCoordinate2D target =
-//        }
-//    }
-
-//    @IBAction func button(sender: UIBarButtonItem) {
-//        placesClient?.currentPlaceWithCallback({
-//            (placeLikelihoodList: GMSPlaceLikelihoodList?, error: NSError?) -> Void in
-//            if let error = error {
-//                print("Pick Place error: \(error.localizedDescription)")
-//                return
-//            }
-//            
-//            self.nameLabel.text = "No current place"
-//            self.addressLabel.text = ""
-//            
-//            if let placeLikelihoodList = placeLikelihoodList {
-//                let place = placeLikelihoodList.likelihoods.first?.place
-//                if let place = place {
-//                    self.nameLabel.text = place.name
-//                    self.addressLabel.text = place.formattedAddress.componentsSeparatedByString(", ")
-//                        .joinWithSeparator("\n")
-//                }
-//            }
-//        })
-//    }
-
-    
-
-        
-    
+    func locationManager(manager: CLLocationManager,
+        didFailWithError error: NSError){
+            
+            print("An error occurred while tracking location changes : \(error.description)")
+    }
 
     @IBAction func onSignOutTapped(sender: AnyObject) {
         //unauth() is the logout method for the current user.
@@ -120,6 +93,37 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         print("method firing")
 
     }
+
+    @IBAction func showPlacePicker(sender: AnyObject) {
+        
+        // 1
+        let center = CLLocationCoordinate2DMake(self.latitude, self.longitude)
+        let northEast = CLLocationCoordinate2DMake(center.latitude + 0.001, center.longitude + 0.001)
+        let southWest = CLLocationCoordinate2DMake(center.latitude - 0.001, center.longitude - 0.001)
+        let viewport = GMSCoordinateBounds(coordinate: northEast, coordinate: southWest)
+        let config = GMSPlacePickerConfig(viewport: viewport)
+        self.placePicker = GMSPlacePicker(config: config)
+        
+        // 2
+        placePicker.pickPlaceWithCallback { (place: GMSPlace?, error: NSError?) -> Void in
+            
+            if let error = error {
+                print("Error occurred: \(error.localizedDescription)")
+                return
+            }
+            // 3
+            if let place = place {
+                let coordinates = CLLocationCoordinate2DMake(place.coordinate.latitude, place.coordinate.longitude)
+                let marker = GMSMarker(position: coordinates)
+                marker.title = place.name
+                marker.map = self.googleMapView
+                self.googleMapView.animateToLocation(coordinates)
+            } else {
+                print("No place was selected")
+            }
+        }
+    }
+
 }
 
 
