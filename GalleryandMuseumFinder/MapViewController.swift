@@ -12,7 +12,6 @@ import CoreLocation
 
 class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate  {
     
-   // @IBOutlet weak var googleMapView: GMSMapView!
     var googleMapView = GMSMapView()
    
     var placesClient: GMSPlacesClient?
