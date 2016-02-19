@@ -40,6 +40,9 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     
     
     
+    
+    
+    
 
     @IBAction func onLoginTapped(sender: AnyObject) {
         let email = emailTextField.text
@@ -54,7 +57,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
                     // be sure the correct uid is stored
                     NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: "uid")
                     //enter the app 
-                    self.performSegueWithIdentifier("EnterApp", sender: nil)
+                    self.performSegueWithIdentifier("EnterAppSegue", sender: nil)
                 }
             })
         }else {
@@ -71,7 +74,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
         //if we have the uid stored, the user is already  logged in - no need to sign in
         if NSUserDefaults.standardUserDefaults().valueForKey("uid") != nil && DataService.dataService.CURRENT_USER_REF.authData != nil {
             //proceed to enter the app
-            self.performSegueWithIdentifier("EnterApp", sender: nil)
+            self.performSegueWithIdentifier("EnterAppSegue", sender: nil)
         }
     }
     
@@ -89,7 +92,20 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     }
     
     
+    func signIn(signIn: GIDSignIn!, didSignInForUser user: GIDGoogleUser!,
+        withError error: NSError!) {
+            if (error == nil) {
+                performSegueWithIdentifier("EnterAppSegue", sender: nil)
+                // Perform any operations on signed in user here.
+                // ...
+            } else {
+                print("\(error.localizedDescription)")
+            }
+    }
+
     
+    
+
     
     
     

@@ -9,8 +9,8 @@
 import UIKit
 import GoogleMaps
 import CoreLocation
-
-class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate  {
+import Google
+class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate, GIDSignInUIDelegate  {
     
    // @IBOutlet weak var googleMapView: GMSMapView!
     var googleMapView = GMSMapView()
@@ -21,7 +21,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         locationManager.delegate = self
     
         locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
@@ -111,10 +111,9 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
     @IBAction func onSignOutTapped(sender: AnyObject) {
         //unauth() is the logout method for the current user.
         DataService.dataService.CURRENT_USER_REF.unauth()
-        
+        GIDSignIn.sharedInstance().signOut()
         //remove the user's uid from storage
         NSUserDefaults.standardUserDefaults().setValue(nil, forKey: "uid")
-        
         //Head back to login
         let loginViewcontroller = self.storyboard!.instantiateViewControllerWithIdentifier("Login")
         UIApplication.sharedApplication().keyWindow?.rootViewController = loginViewcontroller
