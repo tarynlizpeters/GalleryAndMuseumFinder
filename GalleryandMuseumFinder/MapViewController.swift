@@ -39,18 +39,17 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
 
         self.view.addSubview(googleMapView)
         
-        let marker = GMSMarker()
+      //  let marker = GMSMarker()
         
         
-        marker.map = googleMapView
+        //marker.map = googleMapView
     }
     
-//    override func viewDidAppear(animated: Bool) {
-//        super.viewDidAppear(animated)
-//        self.googleMapView = GMSMapView(frame: self.mapViewContainer.frame)
-//        self.googleMapView.animateToZoom(18.0)
-//        self.view.addSubview(googleMapView)
-//    }
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.googleMapView.animateToZoom(18.0)
+        self.view.addSubview(googleMapView)
+    }
     
     
 
