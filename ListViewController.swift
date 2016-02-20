@@ -1,60 +1,85 @@
 //
-//  GalleryListViewController.swift
+//  MapViewController.swift
 //  GalleryandMuseumFinder
 //
-//  Created by Taryn Parker on 2/16/16.
+//  Created by Danny Vasquez and Joseph Mouer on 2/18/16.
 //  Copyright © 2016 Mobile Makers. All rights reserved.
 //
 
 import UIKit
-import MapKit
+import GoogleMaps
 import CoreLocation
 import Google
-class GalleryListViewController: UIViewController, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource, GIDSignInUIDelegate {
-var locationManager = CLLocationManager()
-   
-    @IBOutlet weak var mapView: MKMapView!
+class ListViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate, GIDSignInUIDelegate  {
+    var googleMapView = GMSMapView()
+    var placePicker: GMSPlacePicker!
+    var latitude: Double!
+    var longitude: Double!
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet var mapViewContainer: UIView!
     
+    
+    var placesClient: GMSPlacesClient?
+    var locationManager = CLLocationManager()
+    let marker = GMSMarker()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         locationManager.delegate = self
+        
+        locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
+        locationManager.distanceFilter = 10
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         
-    }
-
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let location = locations.first
+        googleMapView.myLocationEnabled = true
         
-        if location?.verticalAccuracy < 1000 && location?.horizontalAccuracy < 1000 {
-            locationManager.stopUpdatingLocation()
+        self.view.addSubview(googleMapView)
+        
+        //  let marker = GMSMarker()
+        
+        
+        //marker.map = googleMapView
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.googleMapView.animateToZoom(18.0)
+        self.view.addSubview(googleMapView)
+    }
+    
+    
+    
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        if status == .AuthorizedWhenInUse {
+            googleMapView.myLocationEnabled = true
         }
         
     }
-
-    func getDirectionsTo(destinationItem: MKMapItem) {
-        let request = MKDirectionsRequest()
-        request.source = MKMapItem.mapItemForCurrentLocation()
-        let directions = MKDirections(request: request)
-        directions.calculateDirectionsWithCompletionHandler { (response:MKDirectionsResponse?, error:NSError?) -> Void in
-            let routes = response?.routes
-            let route = routes!.first
+    
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
+        // 1
+        let location:CLLocation = locations.last!
+        self.latitude = location.coordinate.latitude
+        self.longitude = location.coordinate.longitude
+        
+        // 2
+        let coordinates = CLLocationCoordinate2DMake(self.latitude, self.longitude)
+        let marker = GMSMarker(position: coordinates)
+        marker.title = "I am here"
+        marker.map = self.googleMapView
+        self.googleMapView.animateToLocation(coordinates)
+    }
+    
+    
+    
+    func locationManager(manager: CLLocationManager,
+        didFailWithError error: NSError){
             
-            var x = 1
-            let directionsString = NSMutableString()
-            for step in route!.steps {
-                directionsString.appendString("\(x): \(step.instructions)")
-                x++
-            }
-        }
-        
+            print("An error occurred while tracking location changes : \(error.description)")
     }
-    
-    
     
     @IBAction func onSignOutTapped(sender: AnyObject) {
         //unauth() is the logout method for the current user.
@@ -67,18 +92,37 @@ var locationManager = CLLocationManager()
         UIApplication.sharedApplication().keyWindow?.rootViewController = loginViewcontroller
         print("method firing")
         
-
     }
     
-    
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("CellID")
-        cell?.backgroundColor = UIColor.grayColor()
-        return cell!
+    @IBAction func showPlacePicker(sender: AnyObject) {
+        
+        // 1
+        let center = CLLocationCoordinate2DMake(self.latitude, self.longitude)
+        let northEast = CLLocationCoordinate2DMake(center.latitude + 0.001, center.longitude + 0.001)
+        let southWest = CLLocationCoordinate2DMake(center.latitude - 0.001, center.longitude - 0.001)
+        let viewport = GMSCoordinateBounds(coordinate: northEast, coordinate: southWest)
+        let config = GMSPlacePickerConfig(viewport: viewport)
+        self.placePicker = GMSPlacePicker(config: config)
+        
+        // 2
+        placePicker.pickPlaceWithCallback { (place: GMSPlace?, error: NSError?) -> Void in
+            
+            if let error = error {
+                print("Error occurred: \(error.localizedDescription)")
+                return
+            }
+            // 3
+            if let place = place {
+                let coordinates = CLLocationCoordinate2DMake(place.coordinate.latitude, place.coordinate.longitude)
+                let marker = GMSMarker(position: coordinates)
+                marker.title = place.name
+                marker.map = self.googleMapView
+                self.googleMapView.animateToLocation(coordinates)
+            } else {
+                print("No place was selected")
+            }
+        }
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
-    }
 }
+

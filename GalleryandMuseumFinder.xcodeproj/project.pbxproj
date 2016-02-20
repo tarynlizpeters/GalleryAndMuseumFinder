@@ -18,7 +18,6 @@
 		30C8FD011C753C7C0007D48C /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30C8FD001C753C7C0007D48C /* Twitter.framework */; };
 		30C8FD031C753D9C0007D48C /* LoginViewC+TwitterFuctionality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C8FD021C753D9C0007D48C /* LoginViewC+TwitterFuctionality.swift */; };
 		30C8FD061C753E9D0007D48C /* TwitterAuthHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C8FD051C753E9D0007D48C /* TwitterAuthHelper.m */; };
-		30C8FD091C7628A00007D48C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C8FD081C7628A00007D48C /* MapViewController.swift */; };
 		30C8FD0B1C76291F0007D48C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30C8FD0A1C76291F0007D48C /* MapKit.framework */; };
 		952C0C5B1C738DCF005BC9E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952C0C5A1C738DCF005BC9E7 /* AppDelegate.swift */; };
 		952C0C601C738DCF005BC9E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 952C0C5E1C738DCF005BC9E7 /* Main.storyboard */; };
@@ -46,7 +45,6 @@
 		30C8FD041C753E9D0007D48C /* GalleryandMuseumFinder-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GalleryandMuseumFinder-Bridging-Header.h"; sourceTree = "<group>"; };
 		30C8FD051C753E9D0007D48C /* TwitterAuthHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterAuthHelper.m; sourceTree = "<group>"; };
 		30C8FD071C753F180007D48C /* TwitterAuthHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwitterAuthHelper.h; sourceTree = "<group>"; };
-		30C8FD081C7628A00007D48C /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		30C8FD0A1C76291F0007D48C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		872E9856D0BF0A778E3D643E /* Pods-GalleryandMuseumFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GalleryandMuseumFinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-GalleryandMuseumFinder/Pods-GalleryandMuseumFinder.release.xcconfig"; sourceTree = "<group>"; };
 		930E2401F11E2ED4E7993804 /* Pods_GalleryandMuseumFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GalleryandMuseumFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,7 +115,6 @@
 				30C8FD021C753D9C0007D48C /* LoginViewC+TwitterFuctionality.swift */,
 				952C0C6C1C739183005BC9E7 /* ListViewController.swift */,
 				952C0C5E1C738DCF005BC9E7 /* Main.storyboard */,
-				30C8FD081C7628A00007D48C /* MapViewController.swift */,
 				30C8FCF61C7507860007D48C /* LoginViewController.swift */,
 				30C8FCF81C7507A00007D48C /* ResetViewController.swift */,
 				30C8FCFA1C7507B70007D48C /* RegisterViewController.swift */,
@@ -273,7 +270,6 @@
 				952C0C6F1C7391F6005BC9E7 /* DetailViewController.swift in Sources */,
 				30C8FCF31C74FA4F0007D48C /* DataService.swift in Sources */,
 				952C0C5B1C738DCF005BC9E7 /* AppDelegate.swift in Sources */,
-				30C8FD091C7628A00007D48C /* MapViewController.swift in Sources */,
 				30C8FD031C753D9C0007D48C /* LoginViewC+TwitterFuctionality.swift in Sources */,
 				30C8FCF91C7507A00007D48C /* ResetViewController.swift in Sources */,
 				952C0C6D1C739183005BC9E7 /* ListViewController.swift in Sources */,
