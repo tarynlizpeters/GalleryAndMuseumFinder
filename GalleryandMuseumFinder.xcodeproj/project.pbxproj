@@ -26,6 +26,8 @@
 		952C0C6D1C739183005BC9E7 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952C0C6C1C739183005BC9E7 /* ListViewController.swift */; };
 		952C0C6F1C7391F6005BC9E7 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952C0C6E1C7391F6005BC9E7 /* DetailViewController.swift */; };
 		952C0C711C73992D005BC9E7 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952C0C701C73992D005BC9E7 /* CommentViewController.swift */; };
+		DFFF35301C7A0F0700D645BF /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFF352F1C7A0F0700D645BF /* TableViewController.swift */; };
+		DFFF35321C7A1E2A00D645BF /* FactualSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFFF35311C7A1E2A00D645BF /* FactualSDK.framework */; };
 		FC6489CF3E7720E6299738EE /* Pods_GalleryandMuseumFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 930E2401F11E2ED4E7993804 /* Pods_GalleryandMuseumFinder.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +59,8 @@
 		952C0C6C1C739183005BC9E7 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListViewController.swift; path = ../ListViewController.swift; sourceTree = "<group>"; };
 		952C0C6E1C7391F6005BC9E7 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		952C0C701C73992D005BC9E7 /* CommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
+		DFFF352F1C7A0F0700D645BF /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		DFFF35311C7A1E2A00D645BF /* FactualSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FactualSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFFF35321C7A1E2A00D645BF /* FactualSDK.framework in Frameworks */,
 				30C8FD0B1C76291F0007D48C /* MapKit.framework in Frameworks */,
 				30C8FD011C753C7C0007D48C /* Twitter.framework in Frameworks */,
 				30C8FCFF1C753C730007D48C /* Accounts.framework in Frameworks */,
@@ -78,6 +83,7 @@
 		05AA601C0ED3FE00030980C6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DFFF35311C7A1E2A00D645BF /* FactualSDK.framework */,
 				30C8FD0A1C76291F0007D48C /* MapKit.framework */,
 				30C8FD001C753C7C0007D48C /* Twitter.framework */,
 				30C8FCFE1C753C730007D48C /* Accounts.framework */,
@@ -115,6 +121,7 @@
 				30C8FD021C753D9C0007D48C /* LoginViewC+TwitterFuctionality.swift */,
 				952C0C6C1C739183005BC9E7 /* ListViewController.swift */,
 				952C0C5E1C738DCF005BC9E7 /* Main.storyboard */,
+				DFFF352F1C7A0F0700D645BF /* TableViewController.swift */,
 				30C8FCF61C7507860007D48C /* LoginViewController.swift */,
 				30C8FCF81C7507A00007D48C /* ResetViewController.swift */,
 				30C8FCFA1C7507B70007D48C /* RegisterViewController.swift */,
@@ -175,6 +182,12 @@
 				TargetAttributes = {
 					952C0C561C738DCF005BC9E7 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = SEJAGQADS3;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -270,6 +283,7 @@
 				952C0C6F1C7391F6005BC9E7 /* DetailViewController.swift in Sources */,
 				30C8FCF31C74FA4F0007D48C /* DataService.swift in Sources */,
 				952C0C5B1C738DCF005BC9E7 /* AppDelegate.swift in Sources */,
+				DFFF35301C7A0F0700D645BF /* TableViewController.swift in Sources */,
 				30C8FD031C753D9C0007D48C /* LoginViewC+TwitterFuctionality.swift in Sources */,
 				30C8FCF91C7507A00007D48C /* ResetViewController.swift in Sources */,
 				952C0C6D1C739183005BC9E7 /* ListViewController.swift in Sources */,
@@ -390,6 +404,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = GalleryandMuseumFinder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -411,6 +426,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = GalleryandMuseumFinder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

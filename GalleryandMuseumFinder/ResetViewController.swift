@@ -19,9 +19,6 @@ class ResetViewController: UIViewController {
     }
     
 
-    
-    
-    
     @IBAction func onResetTapped(sender: AnyObject) {
         let email = emailTextField.text
         let ref = Firebase(url: "gallerynmuseumfinder.firebaseIO.com")

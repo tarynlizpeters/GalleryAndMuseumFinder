@@ -38,11 +38,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
         authHelper = TwitterAuthHelper(firebaseRef: ref, apiKey: "tpRrduRnsnj5Ehk3BR0z4lGAS")
     }
     
-    
-    
-    
-    
-    
+
 
     @IBAction func onLoginTapped(sender: AnyObject) {
         let email = emailTextField.text

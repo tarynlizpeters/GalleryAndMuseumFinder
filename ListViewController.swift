@@ -10,6 +10,8 @@ import UIKit
 import GoogleMaps
 import CoreLocation
 import Google
+
+
 class ListViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate, GIDSignInUIDelegate  {
     var googleMapView = GMSMapView()
     var placePicker: GMSPlacePicker!
@@ -37,10 +39,10 @@ class ListViewController: UIViewController, GMSMapViewDelegate, CLLocationManage
         
         self.view.addSubview(googleMapView)
         
-        //  let marker = GMSMarker()
+        let marker = GMSMarker()
         
         
-        //marker.map = googleMapView
+        marker.map = googleMapView
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -48,8 +50,6 @@ class ListViewController: UIViewController, GMSMapViewDelegate, CLLocationManage
         self.googleMapView.animateToZoom(18.0)
         self.view.addSubview(googleMapView)
     }
-    
-    
     
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         if status == .AuthorizedWhenInUse {
@@ -72,7 +72,6 @@ class ListViewController: UIViewController, GMSMapViewDelegate, CLLocationManage
         marker.map = self.googleMapView
         self.googleMapView.animateToLocation(coordinates)
     }
-    
     
     
     func locationManager(manager: CLLocationManager,
