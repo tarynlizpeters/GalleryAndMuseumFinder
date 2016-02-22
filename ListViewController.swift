@@ -102,6 +102,7 @@ class ListViewController: UIViewController, GMSMapViewDelegate, CLLocationManage
         let viewport = GMSCoordinateBounds(coordinate: northEast, coordinate: southWest)
         let config = GMSPlacePickerConfig(viewport: viewport)
         self.placePicker = GMSPlacePicker(config: config)
+        print(self.placePicker)
         
         // 2
         placePicker.pickPlaceWithCallback { (place: GMSPlace?, error: NSError?) -> Void in

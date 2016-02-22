@@ -26,6 +26,7 @@
 		952C0C6D1C739183005BC9E7 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952C0C6C1C739183005BC9E7 /* ListViewController.swift */; };
 		952C0C6F1C7391F6005BC9E7 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952C0C6E1C7391F6005BC9E7 /* DetailViewController.swift */; };
 		952C0C711C73992D005BC9E7 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952C0C701C73992D005BC9E7 /* CommentViewController.swift */; };
+		DF53E61C1C7A558F00BD3AEF /* Gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF53E61B1C7A558F00BD3AEF /* Gallery.swift */; };
 		DFFF35301C7A0F0700D645BF /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFF352F1C7A0F0700D645BF /* TableViewController.swift */; };
 		DFFF35321C7A1E2A00D645BF /* FactualSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFFF35311C7A1E2A00D645BF /* FactualSDK.framework */; };
 		FC6489CF3E7720E6299738EE /* Pods_GalleryandMuseumFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 930E2401F11E2ED4E7993804 /* Pods_GalleryandMuseumFinder.framework */; };
@@ -59,6 +60,7 @@
 		952C0C6C1C739183005BC9E7 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListViewController.swift; path = ../ListViewController.swift; sourceTree = "<group>"; };
 		952C0C6E1C7391F6005BC9E7 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		952C0C701C73992D005BC9E7 /* CommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
+		DF53E61B1C7A558F00BD3AEF /* Gallery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gallery.swift; sourceTree = "<group>"; };
 		DFFF352F1C7A0F0700D645BF /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		DFFF35311C7A1E2A00D645BF /* FactualSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FactualSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,6 +119,7 @@
 			children = (
 				952C0C5A1C738DCF005BC9E7 /* AppDelegate.swift */,
 				30C8FCF01C74F9630007D48C /* Constants.swift */,
+				DF53E61B1C7A558F00BD3AEF /* Gallery.swift */,
 				30C8FCF21C74FA4F0007D48C /* DataService.swift */,
 				30C8FD021C753D9C0007D48C /* LoginViewC+TwitterFuctionality.swift */,
 				952C0C6C1C739183005BC9E7 /* ListViewController.swift */,
@@ -287,6 +290,7 @@
 				30C8FD031C753D9C0007D48C /* LoginViewC+TwitterFuctionality.swift in Sources */,
 				30C8FCF91C7507A00007D48C /* ResetViewController.swift in Sources */,
 				952C0C6D1C739183005BC9E7 /* ListViewController.swift in Sources */,
+				DF53E61C1C7A558F00BD3AEF /* Gallery.swift in Sources */,
 				30C8FD061C753E9D0007D48C /* TwitterAuthHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
