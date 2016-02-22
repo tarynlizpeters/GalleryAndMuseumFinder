@@ -16,7 +16,8 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        let url = NSURL(string:"https://maps.googleapis.com/maps/api/place/textsearch/json?query=art+galleries+in+Chicago&key=AIzaSyDNopD2lCPhs0z-Uap3f8EPUt9R3gGjGjg")
+        self.tableView.rowHeight = 80
+        let url = NSURL(string:"https://maps.googleapis.com/maps/api/place/textsearch/json?query=art+gallery+in+Chicago&key=AIzaSyDNopD2lCPhs0z-Uap3f8EPUt9R3gGjGjg")
         
         let session = NSURLSession.sharedSession()
         
@@ -61,6 +62,9 @@ class TableViewController: UITableViewController {
         let gallery = galleries[indexPath.row] as NSDictionary
         cell.textLabel?.text = gallery.objectForKey("name") as? String
         cell.textLabel?.numberOfLines = 0
+        let address = galleries[indexPath.row] as NSDictionary
+        cell.detailTextLabel?.text = address.objectForKey("formatted_address") as? String
+        cell.detailTextLabel?.numberOfLines = 0
         return cell
     }
     
