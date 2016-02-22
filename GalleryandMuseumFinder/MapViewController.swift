@@ -10,6 +10,8 @@ import UIKit
 import GoogleMaps
 import CoreLocation
 import Google
+
+
 class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate, GIDSignInUIDelegate  {    
     var googleMapView = GMSMapView()
     var placePicker: GMSPlacePicker!
