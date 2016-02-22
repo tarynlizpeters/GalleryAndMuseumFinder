@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0Tq-dE-f6C">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0Tq-dE-f6C">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -84,7 +84,7 @@
             </objects>
             <point key="canvasLocation" x="-1105" y="-520"/>
         </scene>
-        <!--Map View Controller-->
+        <!--Gallery List View Controller-->
         <scene sceneID="Y7d-oQ-QMO">
             <objects>
                 <viewController id="Esb-gJ-3i7" customClass="GalleryListViewController" customModule="GalleryandMuseumFinder" customModuleProvider="target" sceneMemberID="viewController">
@@ -356,7 +356,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tav-ue-RXJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4153" y="1069"/>
+            <point key="canvasLocation" x="997" y="297"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="SSN-3j-0cU">
