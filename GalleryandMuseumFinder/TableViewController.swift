@@ -16,7 +16,7 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        let url = NSURL(string:"https://maps.googleapis.com/maps/api/place/textsearch/json?query=galleries+in+Chicago&key=AIzaSyDUwrY1h6zZuVWvtvO9-tNcgz6sW361UrU")
+        let url = NSURL(string:"https://maps.googleapis.com/maps/api/place/textsearch/json?query=art+galleries+in+Chicago&key=AIzaSyDNopD2lCPhs0z-Uap3f8EPUt9R3gGjGjg")
         
         let session = NSURLSession.sharedSession()
         
@@ -24,23 +24,24 @@ class TableViewController: UITableViewController {
             do {
                 let jsonDict = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
                     as! NSDictionary
-                let resultsArray = jsonDict ["results"] as! NSArray
-                for dictionary in resultsArray {
-                    let newGalDict:Gallery = Gallery.init(galleryDictionary: dictionary as! NSDictionary)
-                    self.galleryArray.append(newGalDict)
+                print(jsonDict)
+                self.galleries = jsonDict ["results"] as! [NSDictionary]
+                for dictionary in self.galleries {
+                    let galleryObject:Gallery = Gallery(galleryDictionary: dictionary)
+                    self.galleryArray.append(galleryObject)
                 }
                 
                 dispatch_async(dispatch_get_main_queue()) { () -> Void in
-                    self.tableView.reloadData()
+//                    self.tableView.reloadData()
                 }
                 
             }
             catch let error as NSError {
                 print("jsonError: \(error.localizedDescription)")
                 
-                self.tableView.reloadData()
+               
             }
-            
+             self.tableView.reloadData()
         }
         
         task.resume()
@@ -51,14 +52,15 @@ class TableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return galleryArray.count
+        return galleries.count
     }
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("CellID", forIndexPath: indexPath)
-        let gallery = galleries[indexPath.row]
-        cell.textLabel!.text = gallery.objectForKey("location") as? String
+        let gallery = galleries[indexPath.row] as NSDictionary
+        cell.textLabel?.text = gallery.objectForKey("name") as? String
+        cell.textLabel?.numberOfLines = 0
         return cell
     }
     
