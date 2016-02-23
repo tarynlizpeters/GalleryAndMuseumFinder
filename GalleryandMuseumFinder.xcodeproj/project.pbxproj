@@ -18,15 +18,16 @@
 		30C8FD011C753C7C0007D48C /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30C8FD001C753C7C0007D48C /* Twitter.framework */; };
 		30C8FD031C753D9C0007D48C /* LoginViewC+TwitterFuctionality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C8FD021C753D9C0007D48C /* LoginViewC+TwitterFuctionality.swift */; };
 		30C8FD061C753E9D0007D48C /* TwitterAuthHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C8FD051C753E9D0007D48C /* TwitterAuthHelper.m */; };
-		30C8FD091C7628A00007D48C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C8FD081C7628A00007D48C /* MapViewController.swift */; };
 		30C8FD0B1C76291F0007D48C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30C8FD0A1C76291F0007D48C /* MapKit.framework */; };
 		952C0C5B1C738DCF005BC9E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952C0C5A1C738DCF005BC9E7 /* AppDelegate.swift */; };
 		952C0C601C738DCF005BC9E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 952C0C5E1C738DCF005BC9E7 /* Main.storyboard */; };
 		952C0C621C738DCF005BC9E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 952C0C611C738DCF005BC9E7 /* Assets.xcassets */; };
 		952C0C651C738DCF005BC9E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 952C0C631C738DCF005BC9E7 /* LaunchScreen.storyboard */; };
-		952C0C6D1C739183005BC9E7 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952C0C6C1C739183005BC9E7 /* ListViewController.swift */; };
 		952C0C6F1C7391F6005BC9E7 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952C0C6E1C7391F6005BC9E7 /* DetailViewController.swift */; };
 		952C0C711C73992D005BC9E7 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952C0C701C73992D005BC9E7 /* CommentViewController.swift */; };
+		DF53E61C1C7A558F00BD3AEF /* Gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF53E61B1C7A558F00BD3AEF /* Gallery.swift */; };
+		DF53E6201C7BAB7700BD3AEF /* GMtableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF53E61F1C7BAB7700BD3AEF /* GMtableView.swift */; };
+		DF53E6221C7BABD900BD3AEF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF53E6211C7BABD900BD3AEF /* ViewController.swift */; };
 		FC6489CF3E7720E6299738EE /* Pods_GalleryandMuseumFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 930E2401F11E2ED4E7993804 /* Pods_GalleryandMuseumFinder.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,7 +47,6 @@
 		30C8FD041C753E9D0007D48C /* GalleryandMuseumFinder-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GalleryandMuseumFinder-Bridging-Header.h"; sourceTree = "<group>"; };
 		30C8FD051C753E9D0007D48C /* TwitterAuthHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterAuthHelper.m; sourceTree = "<group>"; };
 		30C8FD071C753F180007D48C /* TwitterAuthHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwitterAuthHelper.h; sourceTree = "<group>"; };
-		30C8FD081C7628A00007D48C /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		30C8FD0A1C76291F0007D48C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		872E9856D0BF0A778E3D643E /* Pods-GalleryandMuseumFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GalleryandMuseumFinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-GalleryandMuseumFinder/Pods-GalleryandMuseumFinder.release.xcconfig"; sourceTree = "<group>"; };
 		930E2401F11E2ED4E7993804 /* Pods_GalleryandMuseumFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GalleryandMuseumFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,9 +56,11 @@
 		952C0C611C738DCF005BC9E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		952C0C641C738DCF005BC9E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		952C0C661C738DCF005BC9E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		952C0C6C1C739183005BC9E7 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListViewController.swift; path = ../ListViewController.swift; sourceTree = "<group>"; };
 		952C0C6E1C7391F6005BC9E7 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		952C0C701C73992D005BC9E7 /* CommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
+		DF53E61B1C7A558F00BD3AEF /* Gallery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gallery.swift; sourceTree = "<group>"; };
+		DF53E61F1C7BAB7700BD3AEF /* GMtableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMtableView.swift; sourceTree = "<group>"; };
+		DF53E6211C7BABD900BD3AEF /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,11 +115,12 @@
 			children = (
 				952C0C5A1C738DCF005BC9E7 /* AppDelegate.swift */,
 				30C8FCF01C74F9630007D48C /* Constants.swift */,
+				DF53E61B1C7A558F00BD3AEF /* Gallery.swift */,
+				DF53E61F1C7BAB7700BD3AEF /* GMtableView.swift */,
 				30C8FCF21C74FA4F0007D48C /* DataService.swift */,
 				30C8FD021C753D9C0007D48C /* LoginViewC+TwitterFuctionality.swift */,
-				952C0C6C1C739183005BC9E7 /* ListViewController.swift */,
 				952C0C5E1C738DCF005BC9E7 /* Main.storyboard */,
-				30C8FD081C7628A00007D48C /* MapViewController.swift */,
+				DF53E6211C7BABD900BD3AEF /* ViewController.swift */,
 				30C8FCF61C7507860007D48C /* LoginViewController.swift */,
 				30C8FCF81C7507A00007D48C /* ResetViewController.swift */,
 				30C8FCFA1C7507B70007D48C /* RegisterViewController.swift */,
@@ -178,6 +181,12 @@
 				TargetAttributes = {
 					952C0C561C738DCF005BC9E7 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = SEJAGQADS3;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -266,17 +275,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF53E6221C7BABD900BD3AEF /* ViewController.swift in Sources */,
 				30C8FCFB1C7507B70007D48C /* RegisterViewController.swift in Sources */,
+				DF53E6201C7BAB7700BD3AEF /* GMtableView.swift in Sources */,
 				30C8FCF71C7507860007D48C /* LoginViewController.swift in Sources */,
 				30C8FCF11C74F9630007D48C /* Constants.swift in Sources */,
 				952C0C711C73992D005BC9E7 /* CommentViewController.swift in Sources */,
 				952C0C6F1C7391F6005BC9E7 /* DetailViewController.swift in Sources */,
 				30C8FCF31C74FA4F0007D48C /* DataService.swift in Sources */,
 				952C0C5B1C738DCF005BC9E7 /* AppDelegate.swift in Sources */,
-				30C8FD091C7628A00007D48C /* MapViewController.swift in Sources */,
 				30C8FD031C753D9C0007D48C /* LoginViewC+TwitterFuctionality.swift in Sources */,
 				30C8FCF91C7507A00007D48C /* ResetViewController.swift in Sources */,
-				952C0C6D1C739183005BC9E7 /* ListViewController.swift in Sources */,
+				DF53E61C1C7A558F00BD3AEF /* Gallery.swift in Sources */,
 				30C8FD061C753E9D0007D48C /* TwitterAuthHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,6 +404,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = GalleryandMuseumFinder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -415,6 +426,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = GalleryandMuseumFinder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
