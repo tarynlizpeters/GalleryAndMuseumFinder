@@ -16,13 +16,11 @@ var tableView: UITableView!
 class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: GMtableView!
-    
     @IBOutlet weak var mapView: GMSMapView!
     
     var galleries = [NSDictionary]()
     var galleryArray  = [Gallery]()
 
- 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.backgroundColor = UIColor.clearColor();
@@ -63,9 +61,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
                 
                 dispatch_async(dispatch_get_main_queue()) { () -> Void in
                     self.tableView.reloadData()
-
                 }
-                
             }
             
             catch let error as NSError {
@@ -146,21 +142,16 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
                 
                 dispatch_async(dispatch_get_main_queue()) { () -> Void in
                     self.tableView.reloadData()
-                    
                 }
-                
             }
                 
             catch let error as NSError {
                 print("jsonError: \(error.localizedDescription)")
-                
             }
         }
         
         task4.resume()
-
     }
-    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print(galleryArray.count)
