@@ -16,14 +16,14 @@ class Gallery: NSObject {
     var longitude: Double!
     
     
-    
     init(galleryDictionary: NSDictionary) {
-        
+        let geometryDictionary = galleryDictionary["geometry"]
+        let locationDictionary = geometryDictionary!["location"]
+    
         name = galleryDictionary["name"] as! String
         formattedAddress = galleryDictionary["formatted_address"] as! String
-       
-        latitude = galleryDictionary["latitdue"] as! Double
-        longitude = galleryDictionary["longitude"] as! Double
+        latitude = locationDictionary!!["lat"] as! Double
+        longitude = locationDictionary!!["lng"] as! Double
         
     }
 }
