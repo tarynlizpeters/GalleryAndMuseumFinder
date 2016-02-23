@@ -9,34 +9,35 @@
 import UIKit
 import GoogleMaps
 import Google
-import MapKit
+import CoreLocation
 
 var tableView: UITableView!
 
-class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
     
     @IBOutlet weak var tableView: GMtableView!
     
-    var mapView: GMSMapView!
+    @IBOutlet var googleMapView: GMSMapView!
     
     var galleries = [NSDictionary]()
     var galleryArray  = [Gallery]()
-
- 
+    var latitude: Double!
+    var longitude: Double!
+    var locationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
         
-        let frame : CGRect = CGRectMake(0,0,500,500)
-        let googleView : UIView = GMSMapView(frame: frame)
-        googleView.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
-        view.alpha=1.0
-        self.view.addSubview(googleView)
+        locationManager.delegate = self
+        
         
         self.tableView.backgroundColor = UIColor.clearColor();
         self.tableView.rowHeight = 80
         
         
-        let url = NSURL(string:"https://maps.googleapis.com/maps/api/place/textsearch/json?query=art+gallery+in+Chicago&key=AIzaSyDNopD2lCPhs0z-Uap3f8EPUt9R3gGjGjg")
+        let url = NSURL(string:"https://maps.googleapis.com/maps/api/place/textsearch/json?query=art_galleries+in+Chicago&key=AIzaSyDNopD2lCPhs0z-Uap3f8EPUt9R3gGjGjg")
         
         let session = NSURLSession.sharedSession()
         
@@ -52,7 +53,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
                 }
                 
                 dispatch_async(dispatch_get_main_queue()) { () -> Void in
-                    
+                    self.tableView.reloadData()
                 }
                 
             }
@@ -60,12 +61,11 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
                 print("jsonError: \(error.localizedDescription)")
                 
             }
-            self.tableView.reloadData()
+            
         }
         
         task.resume()
     }
-    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return galleries.count
@@ -86,11 +86,11 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
         print(error)
     }
     
-//    func scrollViewDidScroll(scrollView: UIScrollView) {
-//        if (scrollView.contentOffset.y < self.mapView.frame.size.height * -1 ) {
-//            scrollView .setContentOffset(CGPointMake(scrollView.contentOffset.x, self.mapView.frame.size.height * -1), animated: true)
-//        }
-//    }
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        if (scrollView.contentOffset.y < self.googleMapView.frame.size.height * -1 ) {
+            scrollView .setContentOffset(CGPointMake(scrollView.contentOffset.x, self.googleMapView.frame.size.height * -1), animated: true)
+        }
+    }
     
 }
 
