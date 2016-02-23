@@ -20,6 +20,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
     
     var galleries = [NSDictionary]()
     var galleryArray  = [Gallery]()
+    var galleryObject: Gallery!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +59,14 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
                     let galleryObject:Gallery = Gallery(galleryDictionary: dictionary)
                     self.galleryArray.append(galleryObject)
                 }
+                //MARK: droppin' pinz
                 
+                let latitude = self.galleryObject.latitude
+                let longitude = self.galleryObject.longitude
+                let position = CLLocationCoordinate2DMake(latitude, longitude)
+                let marker = GMSMarker(position: position)
+                marker.title = self.galleryObject.name
+                marker.map = self.mapView
                 dispatch_async(dispatch_get_main_queue()) { () -> Void in
                     self.tableView.reloadData()
                 }

@@ -9,15 +9,21 @@
 import Foundation
 
 
-class Gallery {
+class Gallery: NSObject {
     var name: String!
     var formattedAddress: String!
+    var latitude: Double!
+    var longitude: Double!
+    
     
     
     init(galleryDictionary: NSDictionary) {
         
         name = galleryDictionary["name"] as! String
         formattedAddress = galleryDictionary["formatted_address"] as! String
+       
+        latitude = galleryDictionary["latitdue"] as! Double
+        longitude = galleryDictionary["longitude"] as! Double
         
     }
 }
