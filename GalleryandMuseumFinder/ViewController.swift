@@ -17,7 +17,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
     
     @IBOutlet weak var tableView: GMtableView!
     
-    @IBOutlet weak var mapView: GMSMapView!
+    var mapView: GMSMapView!
     
     var galleries = [NSDictionary]()
     var galleryArray  = [Gallery]()
@@ -25,8 +25,17 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
  
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let frame : CGRect = CGRectMake(0,0,500,500)
+        let googleView : UIView = GMSMapView(frame: frame)
+        googleView.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
+        view.alpha=1.0
+        self.view.addSubview(googleView)
+        
         self.tableView.backgroundColor = UIColor.clearColor();
         self.tableView.rowHeight = 80
+        
+        
         let url = NSURL(string:"https://maps.googleapis.com/maps/api/place/textsearch/json?query=art+gallery+in+Chicago&key=AIzaSyDNopD2lCPhs0z-Uap3f8EPUt9R3gGjGjg")
         
         let session = NSURLSession.sharedSession()
@@ -77,11 +86,11 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
         print(error)
     }
     
-    func scrollViewDidScroll(scrollView: UIScrollView) {
-        if (scrollView.contentOffset.y < self.mapView.frame.size.height * -1 ) {
-            scrollView .setContentOffset(CGPointMake(scrollView.contentOffset.x, self.mapView.frame.size.height * -1), animated: true)
-        }
-    }
+//    func scrollViewDidScroll(scrollView: UIScrollView) {
+//        if (scrollView.contentOffset.y < self.mapView.frame.size.height * -1 ) {
+//            scrollView .setContentOffset(CGPointMake(scrollView.contentOffset.x, self.mapView.frame.size.height * -1), animated: true)
+//        }
+//    }
     
 }
 
