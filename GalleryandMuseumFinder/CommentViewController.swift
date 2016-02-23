@@ -10,16 +10,15 @@ import UIKit
 
 class CommentViewController: UIViewController {
 
+    @IBOutlet weak var commentTextField: UITextField!
+    @IBOutlet weak var mirrorToTextFieldLabel: UILabel!
+    var commentsText = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.commentsText = commentTextField.text!
+        self.mirrorToTextFieldLabel.text = commentsText
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
 
     /*

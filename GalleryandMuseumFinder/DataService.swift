@@ -44,7 +44,14 @@ class DataService {
     }
     
     
-    
+    func createNewComment(comment: Dictionary<String, AnyObject>) {
+        //save the comment
+        //COMMENT_REF is the parent of the new Comment: "comments"
+        //childByAutoId() saves the joke and gives it a unique ID.
+        let firebaseNewComment = COMMENT_REF.childByAutoId()
+        //setValue() saves to Firebase.
+        firebaseNewComment.setValue(comment)
+    }
     
     
     

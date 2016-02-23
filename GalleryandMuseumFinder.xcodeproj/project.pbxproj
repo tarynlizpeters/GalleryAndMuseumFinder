@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		30324A171C7677DE00D016E3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 30324A161C7677DE00D016E3 /* GoogleService-Info.plist */; };
+		303E9BAD1C7CCEFB00E24353 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303E9BAC1C7CCEFB00E24353 /* Comment.swift */; };
+		303E9BB51C7CD8D500E24353 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303E9BB41C7CD8D500E24353 /* CommentCell.swift */; };
 		30C8FCF11C74F9630007D48C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C8FCF01C74F9630007D48C /* Constants.swift */; };
 		30C8FCF31C74FA4F0007D48C /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C8FCF21C74FA4F0007D48C /* DataService.swift */; };
 		30C8FCF71C7507860007D48C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C8FCF61C7507860007D48C /* LoginViewController.swift */; };
@@ -34,6 +36,8 @@
 /* Begin PBXFileReference section */
 		0B500725FE61EFF07EF30F87 /* Pods-GalleryandMuseumFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GalleryandMuseumFinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GalleryandMuseumFinder/Pods-GalleryandMuseumFinder.debug.xcconfig"; sourceTree = "<group>"; };
 		30324A161C7677DE00D016E3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		303E9BAC1C7CCEFB00E24353 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		303E9BB41C7CD8D500E24353 /* CommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		30C8FCF01C74F9630007D48C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		30C8FCF21C74FA4F0007D48C /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		30C8FCF41C74FD4F0007D48C /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = "Pods/../build/Debug-iphoneos/Firebase.framework"; sourceTree = "<group>"; };
@@ -118,6 +122,7 @@
 				DF53E61B1C7A558F00BD3AEF /* Gallery.swift */,
 				DF53E61F1C7BAB7700BD3AEF /* GMtableView.swift */,
 				30C8FCF21C74FA4F0007D48C /* DataService.swift */,
+				303E9BAC1C7CCEFB00E24353 /* Comment.swift */,
 				30C8FD021C753D9C0007D48C /* LoginViewC+TwitterFuctionality.swift */,
 				952C0C5E1C738DCF005BC9E7 /* Main.storyboard */,
 				DF53E6211C7BABD900BD3AEF /* ViewController.swift */,
@@ -127,6 +132,7 @@
 				952C0C701C73992D005BC9E7 /* CommentViewController.swift */,
 				952C0C6E1C7391F6005BC9E7 /* DetailViewController.swift */,
 				952C0C611C738DCF005BC9E7 /* Assets.xcassets */,
+				303E9BB41C7CD8D500E24353 /* CommentCell.swift */,
 				952C0C631C738DCF005BC9E7 /* LaunchScreen.storyboard */,
 				30324A161C7677DE00D016E3 /* GoogleService-Info.plist */,
 				952C0C661C738DCF005BC9E7 /* Info.plist */,
@@ -278,6 +284,7 @@
 				DF53E6221C7BABD900BD3AEF /* ViewController.swift in Sources */,
 				30C8FCFB1C7507B70007D48C /* RegisterViewController.swift in Sources */,
 				DF53E6201C7BAB7700BD3AEF /* GMtableView.swift in Sources */,
+				303E9BAD1C7CCEFB00E24353 /* Comment.swift in Sources */,
 				30C8FCF71C7507860007D48C /* LoginViewController.swift in Sources */,
 				30C8FCF11C74F9630007D48C /* Constants.swift in Sources */,
 				952C0C711C73992D005BC9E7 /* CommentViewController.swift in Sources */,
@@ -288,6 +295,7 @@
 				30C8FCF91C7507A00007D48C /* ResetViewController.swift in Sources */,
 				DF53E61C1C7A558F00BD3AEF /* Gallery.swift in Sources */,
 				30C8FD061C753E9D0007D48C /* TwitterAuthHelper.m in Sources */,
+				303E9BB51C7CD8D500E24353 /* CommentCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
