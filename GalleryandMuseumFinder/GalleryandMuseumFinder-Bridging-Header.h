@@ -5,5 +5,4 @@
 #import "TwitterAuthHelper.h"
 #import <GoogleMaps/GoogleMaps.h>
 #import <Google/SignIn.h>
-#import <FactualSDK/FactualAPI.h>
 

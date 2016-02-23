@@ -17,7 +17,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
     
     @IBOutlet weak var tableView: GMtableView!
     
-    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var mapView: GMSMapView!
     
     var galleries = [NSDictionary]()
     var galleryArray  = [Gallery]()

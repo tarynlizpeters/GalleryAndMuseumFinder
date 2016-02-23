@@ -28,7 +28,6 @@
 		DF53E61C1C7A558F00BD3AEF /* Gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF53E61B1C7A558F00BD3AEF /* Gallery.swift */; };
 		DF53E6201C7BAB7700BD3AEF /* GMtableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF53E61F1C7BAB7700BD3AEF /* GMtableView.swift */; };
 		DF53E6221C7BABD900BD3AEF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF53E6211C7BABD900BD3AEF /* ViewController.swift */; };
-		DFFF35321C7A1E2A00D645BF /* FactualSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFFF35311C7A1E2A00D645BF /* FactualSDK.framework */; };
 		FC6489CF3E7720E6299738EE /* Pods_GalleryandMuseumFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 930E2401F11E2ED4E7993804 /* Pods_GalleryandMuseumFinder.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,7 +61,6 @@
 		DF53E61B1C7A558F00BD3AEF /* Gallery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gallery.swift; sourceTree = "<group>"; };
 		DF53E61F1C7BAB7700BD3AEF /* GMtableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMtableView.swift; sourceTree = "<group>"; };
 		DF53E6211C7BABD900BD3AEF /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DFFF35311C7A1E2A00D645BF /* FactualSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FactualSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +68,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DFFF35321C7A1E2A00D645BF /* FactualSDK.framework in Frameworks */,
 				30C8FD0B1C76291F0007D48C /* MapKit.framework in Frameworks */,
 				30C8FD011C753C7C0007D48C /* Twitter.framework in Frameworks */,
 				30C8FCFF1C753C730007D48C /* Accounts.framework in Frameworks */,
@@ -85,7 +82,6 @@
 		05AA601C0ED3FE00030980C6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DFFF35311C7A1E2A00D645BF /* FactualSDK.framework */,
 				30C8FD0A1C76291F0007D48C /* MapKit.framework */,
 				30C8FD001C753C7C0007D48C /* Twitter.framework */,
 				30C8FCFE1C753C730007D48C /* Accounts.framework */,
