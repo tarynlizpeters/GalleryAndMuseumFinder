@@ -23,11 +23,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
     
     var galleryArray: NSMutableArray!
     
-    var latitude: Double!
-    
     var mapTasks = MapTasks()
-    
-    var longitude: Double!
     
     var locationManager = CLLocationManager()
     
@@ -45,6 +41,9 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+        
+        
+        //MARK: Map markers
         
         googleMapView.delegate = self
         
@@ -87,7 +86,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
                 for dictionary in galleries1 {
                     let galleryObject:Gallery = Gallery(galleryDictionary: dictionary)
                     self.galleryArray.addObject(galleryObject)
-                }
+                                    }
                 
                 dispatch_async(dispatch_get_main_queue()) { () -> Void in
                     self.tableView.reloadData()
@@ -96,11 +95,20 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
                 
             catch let error as NSError {
                 print("jsonError: \(error.localizedDescription)")
-                
             }
             
+            let array = NSArray(array: self.galleryArray) as! Array<Gallery>
+            for gallery in array {
+                let lat = gallery.latitude
+                let lng = gallery.longitude
+                let position = CLLocationCoordinate2DMake(lat, lng)
+                let marker = GMSMarker(position: position)
+                marker.title = "test"
+                marker.map = self.googleMapView
+            }
+
         }
-        
+       
         task.resume()
         
         let task2 = session2.dataTaskWithURL(urlTwo!) { (data , response, error ) -> Void in
@@ -167,8 +175,9 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
                 for dictionary in galleries4 {
                     let galleryObject:Gallery = Gallery(galleryDictionary: dictionary)
                     self.galleryArray.addObject(galleryObject)
+        
+                    print(self.galleryArray)
                 }
-                
                 dispatch_async(dispatch_get_main_queue()) { () -> Void in
                     self.tableView.reloadData()
                 }
@@ -177,9 +186,11 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
             catch let error as NSError {
                 print("jsonError: \(error.localizedDescription)")
             }
+            
+            
         }
-        
         task4.resume()
+        
     }
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         if !didFindMyLocation {
@@ -264,14 +275,12 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
             print (lat)
             print (lng)
             
-            //     let  position = CLLocationCoordinate2DMake(lat, lng)
-            //    let marker = GMSMarker(position: position)
-            //            marker.title = "Hello World"
-            //            marker.map = googleMapView
             
         }
         
     }
+    
+
     
     
     
