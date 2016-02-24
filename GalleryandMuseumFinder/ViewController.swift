@@ -254,16 +254,16 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         let cell = self.tableView.cellForRowAtIndexPath(indexPath)
         let text = cell?.textLabel?.text
-        let gallery = galleries[indexPath.row] as NSDictionary
-        let address = gallery.objectForKey("formatted_address") as? String
-        let lat = gallery.objectForKey("lat")
-        let lng = gallery.objectForKey("lng")
-        if let text = text {
-            print("did select and the text is \(text)")
-            print (address)
-            print (lat)
-            print (lng)
-            
+        let gallery = galleryArray[indexPath.row] as! Gallery
+//        let address = gallery.objectForKey("formatted_address") as? String
+//        let lat = gallery.objectForKey("lat")
+//        let lng = gallery.objectForKey("lng")
+//        if let text = text {
+//            print("did select and the text is \(text)")
+//            print (address)
+//            print (lat)
+//            print (lng)
+        
             //     let  position = CLLocationCoordinate2DMake(lat, lng)
             //    let marker = GMSMarker(position: position)
             //            marker.title = "Hello World"
@@ -274,7 +274,6 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
     }
     
     
-    
-}
+
 
 

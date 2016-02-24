@@ -437,10 +437,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rbw-hY-7Dk">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rbw-hY-7Dk">
                                 <rect key="frame" x="20" y="159" width="560" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="p59-Dy-Ccd"/>
+                                    <constraint firstAttribute="height" constant="30" id="8o5-3N-rTC"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -476,11 +476,11 @@
                                     <action selector="onTwitterTapped:" destination="qxl-yM-6TG" eventType="touchUpInside" id="a56-eL-MSf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wiq-QH-ulZ">
-                                <rect key="frame" x="262" y="237" width="76" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wiq-QH-ulZ">
+                                <rect key="frame" x="20" y="237" width="560" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="hrL-es-9GD"/>
+                                    <constraint firstAttribute="height" constant="30" id="8rL-Ek-lgz"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -492,13 +492,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="rbw-hY-7Dk" firstAttribute="leading" secondItem="rRj-3F-aQ9" secondAttribute="leadingMargin" id="9SV-Df-Muk"/>
+                            <constraint firstItem="rbw-hY-7Dk" firstAttribute="leading" secondItem="rRj-3F-aQ9" secondAttribute="leadingMargin" id="0mz-CL-7aC"/>
+                            <constraint firstItem="Wiq-QH-ulZ" firstAttribute="leading" secondItem="rRj-3F-aQ9" secondAttribute="leadingMargin" id="5qd-iZ-DUK"/>
                             <constraint firstItem="mw4-4k-18s" firstAttribute="top" secondItem="VIM-qf-UjP" secondAttribute="bottom" constant="79" id="Cjz-tA-QZk"/>
-                            <constraint firstItem="Wiq-QH-ulZ" firstAttribute="leading" secondItem="rRj-3F-aQ9" secondAttribute="leadingMargin" constant="242" id="bL9-aj-pmH"/>
+                            <constraint firstItem="rbw-hY-7Dk" firstAttribute="trailing" secondItem="rRj-3F-aQ9" secondAttribute="trailingMargin" id="WtV-Gm-9ph"/>
                             <constraint firstItem="mw4-4k-18s" firstAttribute="trailing" secondItem="rRj-3F-aQ9" secondAttribute="trailingMargin" id="fPm-Fo-5du"/>
+                            <constraint firstItem="rbw-hY-7Dk" firstAttribute="top" secondItem="mw4-4k-18s" secondAttribute="bottom" constant="30" id="fst-VD-yel"/>
                             <constraint firstItem="mw4-4k-18s" firstAttribute="leading" secondItem="rRj-3F-aQ9" secondAttribute="leadingMargin" id="iLY-VA-nGI"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Wiq-QH-ulZ" secondAttribute="trailing" constant="242" id="jOx-w3-jXf"/>
-                            <constraint firstItem="rbw-hY-7Dk" firstAttribute="trailing" secondItem="rRj-3F-aQ9" secondAttribute="trailingMargin" id="uoH-CC-wPY"/>
+                            <constraint firstItem="Wiq-QH-ulZ" firstAttribute="top" secondItem="rbw-hY-7Dk" secondAttribute="bottom" constant="48" id="pdz-m7-5H9"/>
+                            <constraint firstItem="Wiq-QH-ulZ" firstAttribute="trailing" secondItem="rRj-3F-aQ9" secondAttribute="trailingMargin" id="pj2-ol-05a"/>
                         </constraints>
                     </view>
                     <connections>
@@ -639,6 +641,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="svW-A4-iVx"/>
-        <segue reference="AbR-yz-ni5"/>
+        <segue reference="j33-1F-qe5"/>
     </inferredMetricsTieBreakers>
 </document>
