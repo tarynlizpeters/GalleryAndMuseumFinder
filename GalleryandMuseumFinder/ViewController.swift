@@ -97,15 +97,15 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
                 print("jsonError: \(error.localizedDescription)")
             }
             
-//            let array = NSArray(array: self.galleryArray) as! Array<Gallery>
-            for gallery in self.galleryArray {
-                let lat = gallery.latitude
-                let lng = gallery.longitude
-                let position = CLLocationCoordinate2DMake(lat, lng)
-                let marker = GMSMarker(position: position)
-                marker.title = "test"
-                marker.map = self.googleMapView
-            }
+////            let array = NSArray(array: self.galleryArray) as! Array<Gallery>
+//            for gallery in self.galleryArray {
+//                let lat = gallery.latitude
+//                let lng = gallery.longitude
+//                let position = CLLocationCoordinate2DMake(lat, lng)
+//                let marker = GMSMarker(position: position)
+//                marker.title = "test"
+//                marker.map = self.googleMapView
+//            }
 
         }
        
@@ -264,16 +264,25 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         let cell = self.tableView.cellForRowAtIndexPath(indexPath)
         let text = cell?.textLabel?.text
-        let gallery = galleries[indexPath.row] as NSDictionary
-        let address = gallery.objectForKey("formatted_address") as? String
-        let lat = gallery.objectForKey("lat")
-        let lng = gallery.objectForKey("lng")
-        if let text = text {
-            print("did select and the text is \(text)")
-            print (address)
-            print (lat)
-            print (lng)
-            
+        let gallery = galleryArray[indexPath.row]
+        
+        let lat = gallery.latitude
+        let lng = gallery.longitude
+        let position = CLLocationCoordinate2DMake(lat, lng)
+        let marker = GMSMarker(position: position)
+        marker.title = gallery.name
+        marker.map = self.googleMapView
+        
+        
+//        let address = gallery.objectForKey("formatted_address") as? String
+//        let lat = gallery.objectForKey("lat")
+//        let lng = gallery.objectForKey("lng")
+//        if let text = text {
+//            print("did select and the text is \(text)")
+//            print (address)
+//            print (lat)
+//            print (lng)
+    
             
         }
         
@@ -283,6 +292,6 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
     
     
     
-}
+
 
 
