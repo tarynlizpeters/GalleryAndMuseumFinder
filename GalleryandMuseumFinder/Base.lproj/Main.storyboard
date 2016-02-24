@@ -598,7 +598,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="uNu-6d-dbY">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="j6g-yF-g3a">
+                        <barButtonItem key="rightBarButtonItem" image="map" id="j6g-yF-g3a">
                             <connections>
                                 <action selector="changeMapType:" destination="cSu-9h-eUs" id="aJU-8r-9ge"/>
                             </connections>
@@ -633,6 +633,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="map" width="30" height="30"/>
         <image name="peoplebwwithtext" width="1200" height="799"/>
         <image name="twitt2" width="300" height="300"/>
     </resources>
