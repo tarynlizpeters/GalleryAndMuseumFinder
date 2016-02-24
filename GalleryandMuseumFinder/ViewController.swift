@@ -206,9 +206,6 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
             self.googleMapView.mapType = GoogleMaps.kGMSTypeNormal
         }
         
-        let terrainMapTypeAction = UIAlertAction(title: "Terrain", style: UIAlertActionStyle.Default) { (alertAction) -> Void in
-            self.googleMapView.mapType = GoogleMaps.kGMSTypeTerrain
-        }
         
         let hybridMapTypeAction = UIAlertAction(title: "Hybrid", style: UIAlertActionStyle.Default) { (alertAction) -> Void in
             self.googleMapView.mapType = GoogleMaps.kGMSTypeHybrid
@@ -219,7 +216,6 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
         }
         
         actionSheet.addAction(normalMapTypeAction)
-        actionSheet.addAction(terrainMapTypeAction)
         actionSheet.addAction(hybridMapTypeAction)
         actionSheet.addAction(cancelAction)
         
