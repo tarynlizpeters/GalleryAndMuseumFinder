@@ -21,7 +21,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
     
     var galleries = [NSDictionary]()
     
-    var galleryArray  = [Gallery]()
+    var galleryArray: NSArray!
     
     var latitude: Double!
     
@@ -86,7 +86,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
                 let galleries1 = jsonDict ["results"] as! [NSDictionary]
                 for dictionary in galleries1 {
                     let galleryObject:Gallery = Gallery(galleryDictionary: dictionary)
-                    self.galleryArray.addObject(galleryObject)
+                    self.galleryArray.accessibilityElementsHidden(galleryObject)
                 }
                 
                 dispatch_async(dispatch_get_main_queue()) { () -> Void in
