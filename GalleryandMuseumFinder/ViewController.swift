@@ -53,13 +53,10 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
         
         googleMapView.addObserver(self, forKeyPath: "myLocation", options: NSKeyValueObservingOptions.New, context: nil)
         
-        self.tableView.backgroundColor = UIColor.clearColor();
+        self.tableView.backgroundColor = UIColor.clearColor()
         self.tableView.rowHeight = 50
         
-        
-        let url = NSURL(string:"https://maps.googleapis.com/maps/api/place/textsearch/json?query=art_galleries+in+Chicago&key=AIzaSyDNopD2lCPhs0z-Uap3f8EPUt9R3gGjGjg")
-        
-             if galleryArray != nil && galleryArray.count > 0  {
+        if galleryArray != nil && galleryArray.count > 0  {
             print("there are objects")
         } else {
             galleryArray = NSMutableArray()
@@ -96,14 +93,14 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
                     self.tableView.reloadData()
                 }
             }
-            
+                
             catch let error as NSError {
                 print("jsonError: \(error.localizedDescription)")
                 
             }
             
         }
-
+        
         task.resume()
         
         let task2 = session2.dataTaskWithURL(urlTwo!) { (data , response, error ) -> Void in
@@ -132,7 +129,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
         }
         
         task2.resume()
-    
+        
         let task3 = session3.dataTaskWithURL(urlThree!) { (data , response, error ) -> Void in
             do {
                 print(error)
@@ -157,7 +154,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
                 
             }
         }
-
+        
         task3.resume()
         
         let task4 = session4.dataTaskWithURL(urlFour!) { (data , response, error ) -> Void in
@@ -182,16 +179,6 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
             }
         }
         
-        //MARK: droppin' pinz
-        
-//        let latitude = self.galleryObject.latitude
-//        let longitude = self.galleryObject.longitude
-//        let position = CLLocationCoordinate2DMake(latitude, longitude)
-//        let marker = GMSMarker(position: position)
-//        marker.title = self.galleryObject.name
-//        marker.map = self.mapView
-        
-        
         task4.resume()
     }
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
@@ -211,15 +198,15 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
         let actionSheet = UIAlertController(title: "Map Types", message: "Select map type:", preferredStyle: UIAlertControllerStyle.ActionSheet)
         
         let normalMapTypeAction = UIAlertAction(title: "Normal", style: UIAlertActionStyle.Default) { (alertAction) -> Void in
-                self.googleMapView.mapType = GoogleMaps.kGMSTypeNormal
+            self.googleMapView.mapType = GoogleMaps.kGMSTypeNormal
         }
         
         let terrainMapTypeAction = UIAlertAction(title: "Terrain", style: UIAlertActionStyle.Default) { (alertAction) -> Void in
-               self.googleMapView.mapType = GoogleMaps.kGMSTypeTerrain
+            self.googleMapView.mapType = GoogleMaps.kGMSTypeTerrain
         }
         
         let hybridMapTypeAction = UIAlertAction(title: "Hybrid", style: UIAlertActionStyle.Default) { (alertAction) -> Void in
-                self.googleMapView.mapType = GoogleMaps.kGMSTypeHybrid
+            self.googleMapView.mapType = GoogleMaps.kGMSTypeHybrid
         }
         
         let cancelAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.Cancel) { (alertAction) -> Void in
@@ -277,10 +264,10 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
             print (lat)
             print (lng)
             
-       //     let  position = CLLocationCoordinate2DMake(lat, lng)
-        //    let marker = GMSMarker(position: position)
-//            marker.title = "Hello World"
-//            marker.map = googleMapView
+            //     let  position = CLLocationCoordinate2DMake(lat, lng)
+            //    let marker = GMSMarker(position: position)
+            //            marker.title = "Hello World"
+            //            marker.map = googleMapView
             
         }
         
