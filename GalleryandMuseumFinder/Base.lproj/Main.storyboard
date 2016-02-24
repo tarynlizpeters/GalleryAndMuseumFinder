@@ -588,6 +588,11 @@ Cg
                                         <outlet property="label" destination="0mc-4c-EjB" id="cFd-KP-wWO"/>
                                     </connections>
                                 </view>
+                                <searchBar key="tableFooterView" contentMode="redraw" id="ciy-zp-FLr">
+                                    <rect key="frame" x="0.0" y="236" width="600" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellID" textLabel="ePf-AK-vMZ" detailTextLabel="y5Z-f5-0LP" style="IBUITableViewCellStyleSubtitle" id="XS4-cq-tsV">
                                         <rect key="frame" x="0.0" y="192" width="600" height="44"/>
@@ -649,10 +654,19 @@ Cg
                     </navigationItem>
                     <connections>
                         <outlet property="googleMapView" destination="yBR-gf-qqx" id="3nh-vD-awt"/>
+                        <outlet property="searchDisplayController" destination="2bz-Xb-WnF" id="P5L-zY-umx"/>
                         <outlet property="tableView" destination="2nb-dh-wyU" id="94w-tf-voX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PWg-hW-uwg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="2bz-Xb-WnF">
+                    <connections>
+                        <outlet property="delegate" destination="cSu-9h-eUs" id="Bwl-h9-jZ2"/>
+                        <outlet property="searchContentsController" destination="cSu-9h-eUs" id="tcf-N4-iPC"/>
+                        <outlet property="searchResultsDataSource" destination="cSu-9h-eUs" id="aIs-3h-nhU"/>
+                        <outlet property="searchResultsDelegate" destination="cSu-9h-eUs" id="NNb-va-wGC"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="783" y="386"/>
         </scene>

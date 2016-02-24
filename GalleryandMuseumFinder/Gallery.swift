@@ -9,7 +9,7 @@
 import Foundation
 
 
-class Gallery: NSObject {
+class Gallery  {
     var name: String!
     var formattedAddress: String!
     var latitude: Double!
