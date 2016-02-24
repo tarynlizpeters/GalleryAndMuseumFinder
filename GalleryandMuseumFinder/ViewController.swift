@@ -17,6 +17,11 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
     
     @IBOutlet weak var tableView: GMtableView!
     
+    
+    
+    
+    
+
     @IBOutlet weak var googleMapView: GMSMapView!
     
     var galleries = [NSDictionary]()
@@ -274,7 +279,9 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
     }
     
     
-    
+
 }
+
+
 
 
