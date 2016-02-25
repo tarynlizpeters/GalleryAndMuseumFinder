@@ -9,13 +9,14 @@
 import Foundation
 
 
-class Gallery: NSObject {
+class Gallery  {
     var name: String!
     var formattedAddress: String!
     var latitude: Double!
     var longitude: Double!
     var stringLat: String!
     var stringLong: String!
+    var CLCoordinate = CLLocationCoordinate2D()
     
     
     init(galleryDictionary: NSDictionary) {
@@ -26,7 +27,13 @@ class Gallery: NSObject {
         formattedAddress = galleryDictionary["formatted_address"] as! String
         latitude = locationDictionary!!["lat"] as! Double
         longitude = locationDictionary!!["lng"] as! Double
+
 //        self.latitude = Double(self.stringLat)!
 //        self.longitude = Double(self.stringLong)!
+
+        
+        CLCoordinate = CLLocationCoordinate2DMake(latitude, longitude)
+        
+
     }
 }
