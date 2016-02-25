@@ -15,6 +15,7 @@ class DataService {
     private var _BASE_REF = Firebase(url: "\(BASE_URL)")
     private var _USER_REF = Firebase(url: "\(BASE_URL)/users")
     private var _COMMENT_REF = Firebase(url: "\(BASE_URL)/comments")
+    private var _GALLERY_REF = Firebase(url: "\(BASE_URL)/galleries")
     let rootRef = Firebase(url: "gallerynmuseumfinder.firebaseIO.com")
     
     var BASE_REF: Firebase {
