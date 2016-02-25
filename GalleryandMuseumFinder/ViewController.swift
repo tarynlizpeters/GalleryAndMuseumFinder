@@ -16,9 +16,10 @@ var tableView: UITableView!
 class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate, GMSMapViewDelegate, UISearchBarDelegate, UISearchControllerDelegate {
     
     @IBOutlet weak var tableView: GMtableView!
-    
 
     @IBOutlet weak var googleMapView: GMSMapView!
+
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var galleries = [NSDictionary]()
     
@@ -61,11 +62,6 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
         self.tableView.backgroundColor = UIColor.clearColor()
         self.tableView.rowHeight = 50
         
-//        if galleryArray != nil && galleryArray.count > 0  {
-//            print("there are objects")
-//        } else {
-//            galleryArray = NSMutableArray()
-//        }
         
         let url1 = String("https://maps.googleapis.com/maps/api/place/textsearch/json?query=Chicago&type=art_gallery&key=AIzaSyDNopD2lCPhs0z-Uap3f8EPUt9R3gGjGjg")
         let url2 = String("https://maps.googleapis.com/maps/api/place/textsearch/json?query=Chicago&type=art_gallery&key=AIzaSyDNopD2lCPhs0z-Uap3f8EPUt9R3gGjGjg&pagetoken=CqQDoAEAAHsw7tThV1V22yk57l00EASB3lYL9ANG0Zhi287TWYStsLLP2jMJjXIdsY41Pi3fTBvmrsoK1v_0-CfeHZkmGT5fHeHIEcTEj5kYsR1_uYqxooZVul1s7iFOzqzKMKz089JOpKNvedao71Oku_qBtaiJ25bmTF2laXsfAbrXH3sHi3CsdKdQiT8xo-bFgDiZlEGIBGlso3HM5YY5E2Wsg54uMYKU4_2RbD-xJVhl6JAobW8cn4mqe7UwAt8g3Iv0SxxUKuP8mOTcZXo60EfQ5snqXaNvWzy2yxcDbBtff6FTnjNuqYIOhVNg7SF0eyRZv2zcgbuU29WkyjZHUp5RqTyycZ-S6WyBCFv1GvcNy9TGf83VUzq6uZBxN6dEYOv35R9SIJ5NNNjetO97CnLNqJcXhC4JjLLRuwJUbGati2ZN5SKrIxGdeQSxkf7OETrQ81JQAkVzfD1Ap-Z7R3_lq7nNz_4vX9vXt-w9iIsGFQnXB0wUz_ODjtHz-_fcLl2ErgSj-sKdBZ5h2jLFlLcUscxjMhsLkgniJg6CmpWCCAx2EhAf0iT0qNwxOo02HZp0HED6GhQqM42r8FUYp8QIN4ynhH6SgG0dAA")
@@ -91,7 +87,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
                 let galleries1 = jsonDict ["results"] as! [NSDictionary]
                 for dictionary in galleries1 {
                     let galleryObject:Gallery = Gallery(galleryDictionary: dictionary)
-                    self.galleryArray.addObject(galleryObject)
+                    self.galleryArray.append(galleryObject)
                 }
                 
                 dispatch_async(dispatch_get_main_queue()) { () -> Void in
@@ -117,7 +113,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
                 let galleries2 = jsonDict ["results"] as! [NSDictionary]
                 for dictionary in galleries2 {
                     let galleryObject:Gallery = Gallery(galleryDictionary: dictionary)
-                    self.galleryArray.addObject(galleryObject)
+                    self.galleryArray.append(galleryObject)
                 }
                 
                 dispatch_async(dispatch_get_main_queue()) { () -> Void in
@@ -144,7 +140,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
                 let galleries3 = jsonDict ["results"] as! [NSDictionary]
                 for dictionary in galleries3 {
                     let galleryObject:Gallery = Gallery(galleryDictionary: dictionary)
-                    self.galleryArray.addObject(galleryObject)
+                    self.galleryArray.append(galleryObject)
                 }
                 
                 dispatch_async(dispatch_get_main_queue()) { () -> Void in
@@ -171,7 +167,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
                 let galleries4 = jsonDict ["results"] as! [NSDictionary]
                 for dictionary in galleries4 {
                     let galleryObject:Gallery = Gallery(galleryDictionary: dictionary)
-                    self.galleryArray.addObject(galleryObject)
+                    self.galleryArray.append(galleryObject)
                 }
                 
                 dispatch_async(dispatch_get_main_queue()) { () -> Void in
@@ -268,12 +264,19 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("CellID", forIndexPath: indexPath)
-        let gallery = galleryArray[indexPath.row] 
-        cell.textLabel?.text = gallery.name
-        cell.textLabel?.numberOfLines = 0
-        cell.detailTextLabel?.text = gallery.formattedAddress
-        cell.detailTextLabel?.numberOfLines = 0
+        let cell = tableView.dequeueReusableCellWithIdentifier("CellID") as! TableViewCell
+        if isSearchActive {
+            cell.cellName!.text = filtered[indexPath.row].name
+            cell.addressLabel.text = filtered[indexPath.row].formattedAddress
+            cell.cellImage.image = UIImage(imageLiteral: "likeImage")
+            
+        }
+        else  {
+            cell.cellName!.text = galleryArray[indexPath.row].name
+            cell.addressLabel.text = galleryArray[indexPath.row].formattedAddress
+            cell.cellImage.image = UIImage(imageLiteral: "likeImage")
+        }
+
         return cell
     }
     

@@ -4,7 +4,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Reset View Controller-->
@@ -371,6 +370,9 @@
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="20" y="418" width="360" height="45"/>
+                                </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RCB-45-ySy">
                                 <rect key="frame" x="20" y="484" width="560" height="30"/>
@@ -445,6 +447,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="20" y="159" width="360" height="30"/>
+                                </variation>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9u-4a-cpq">
                                 <rect key="frame" x="20" y="503" width="560" height="30"/>
@@ -486,6 +491,9 @@
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Login"/>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="262" y="237" width="57" height="30"/>
+                                </variation>
                                 <connections>
                                     <action selector="onLoginTapped:" destination="qxl-yM-6TG" eventType="touchUpInside" id="VU8-C7-hfC"/>
                                 </connections>
@@ -543,18 +551,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yBR-gf-qqx" userLabel="googleMapView" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="600" id="w9h-UA-Ope">
+                                        <variation key="widthClass=compact" constant="563"/>
+                                    </constraint>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2nb-dh-wyU">
-                                <rect key="frame" x="0.0" y="335" width="600" height="221"/>
+                                <rect key="frame" x="0.0" y="345" width="600" height="255"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="221" id="k5F-Wh-P3V"/>
+                                    <constraint firstAttribute="height" constant="255" id="k5F-Wh-P3V"/>
                                 </constraints>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="PQI-L1-7HJ" customClass="CustomHeaderView" customModule="GalleryandMuseumFinder" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="64" width="600" height="100"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mc-4c-EjB">
-                                            <rect key="frame" x="8" y="8" width="584" height="84"/>
+                                            <rect key="frame" x="8" y="26" width="584" height="74"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="Art Galleries List">
                                                     <attributes>
@@ -575,48 +592,64 @@ Cg
                                                 </fragment>
                                             </attributedString>
                                             <nil key="highlightedColor"/>
+                                            <variation key="widthClass=compact" misplaced="YES">
+                                                <rect key="frame" x="8" y="26" width="384" height="74"/>
+                                            </variation>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="0mc-4c-EjB" secondAttribute="trailing" constant="8" id="BgM-Id-tm9"/>
-                                        <constraint firstAttribute="bottom" secondItem="0mc-4c-EjB" secondAttribute="bottom" constant="8" id="YcO-kc-kfb"/>
+                                        <constraint firstAttribute="bottom" secondItem="0mc-4c-EjB" secondAttribute="bottom" id="YcO-kc-kfb"/>
                                         <constraint firstItem="0mc-4c-EjB" firstAttribute="leading" secondItem="PQI-L1-7HJ" secondAttribute="leading" constant="8" id="bBw-xi-tA1"/>
-                                        <constraint firstItem="0mc-4c-EjB" firstAttribute="top" secondItem="PQI-L1-7HJ" secondAttribute="top" constant="8" id="ySN-Sx-I6K"/>
+                                        <constraint firstItem="0mc-4c-EjB" firstAttribute="top" secondItem="PQI-L1-7HJ" secondAttribute="top" constant="26" id="ySN-Sx-I6K"/>
                                     </constraints>
                                     <connections>
                                         <outlet property="label" destination="0mc-4c-EjB" id="cFd-KP-wWO"/>
                                     </connections>
                                 </view>
-                                <searchBar key="tableFooterView" contentMode="redraw" id="ciy-zp-FLr">
-                                    <rect key="frame" x="0.0" y="236" width="600" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                </searchBar>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellID" textLabel="ePf-AK-vMZ" detailTextLabel="y5Z-f5-0LP" style="IBUITableViewCellStyleSubtitle" id="XS4-cq-tsV">
-                                        <rect key="frame" x="0.0" y="192" width="600" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellID" rowHeight="90" id="XS4-cq-tsV" customClass="TableViewCell" customModule="GalleryandMuseumFinder" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="128" width="600" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XS4-cq-tsV" id="L7i-1c-AYk">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ePf-AK-vMZ">
-                                                    <rect key="frame" x="15" y="5" width="32" height="20"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ZJ-fm-to6" userLabel="Cell Name">
+                                                    <rect key="frame" x="26" y="5" width="471" height="38"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="26" y="5" width="215" height="38"/>
+                                                    </variation>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="y5Z-f5-0LP">
-                                                    <rect key="frame" x="15" y="25" width="41" height="14"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="52DD2418-C57A-4EAF-96E8-9F7EAC4A44C8" translatesAutoresizingMaskIntoConstraints="NO" id="gmJ-4c-BsK" userLabel="Cell Image">
+                                                    <rect key="frame" x="513" y="5" width="65" height="73"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7wA-fH-UhB" userLabel="Addres Label">
+                                                    <rect key="frame" x="26" y="40" width="471" height="38"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="26" y="40" width="215" height="38"/>
+                                                    </variation>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="52DD2418-C57A-4EAF-96E8-9F7EAC4A44C8" translatesAutoresizingMaskIntoConstraints="NO" id="ebQ-V3-Ne1" userLabel="Cell Image">
+                                                    <rect key="frame" x="513" y="8" width="65" height="73"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="293" y="5" width="65" height="73"/>
+                                                    </variation>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="addressLabel" destination="7wA-fH-UhB" id="NwJ-Ix-hFE"/>
+                                            <outlet property="cellImage" destination="gmJ-4c-BsK" id="rcR-Tk-51S"/>
+                                            <outlet property="cellName" destination="1ZJ-fm-to6" id="OtS-q9-qap"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -624,36 +657,41 @@ Cg
                                     <outlet property="delegate" destination="cSu-9h-eUs" id="zhG-OS-ccm"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yBR-gf-qqx" userLabel="googleMapView" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="492"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="qKk-K3-f8C">
+                                <rect key="frame" x="0.0" y="301" width="600" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="492" id="w9h-UA-Ope"/>
+                                    <constraint firstAttribute="height" constant="44" id="c9f-im-Cba"/>
                                 </constraints>
-                            </view>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="cSu-9h-eUs" id="aue-6j-lCk"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="yBR-gf-qqx" firstAttribute="leading" secondItem="lS1-0X-l8G" secondAttribute="leadingMargin" constant="-20" id="2Kn-Rs-2ON"/>
-                            <constraint firstItem="OO1-vL-oUz" firstAttribute="top" secondItem="2nb-dh-wyU" secondAttribute="bottom" constant="44" id="43h-TK-1Gd"/>
+                            <constraint firstItem="OO1-vL-oUz" firstAttribute="top" secondItem="2nb-dh-wyU" secondAttribute="bottom" id="43h-TK-1Gd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2nb-dh-wyU" secondAttribute="trailing" constant="-20" id="ALS-8l-y0i"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qKk-K3-f8C" secondAttribute="trailing" constant="-20" id="Hr1-4C-cJU"/>
+                            <constraint firstItem="2nb-dh-wyU" firstAttribute="top" secondItem="qKk-K3-f8C" secondAttribute="bottom" id="PIb-Hc-ecO"/>
+                            <constraint firstItem="qKk-K3-f8C" firstAttribute="leading" secondItem="lS1-0X-l8G" secondAttribute="leadingMargin" constant="-20" id="d6i-UL-Qv9"/>
                             <constraint firstItem="yBR-gf-qqx" firstAttribute="top" secondItem="lS1-0X-l8G" secondAttribute="topMargin" id="dz3-eN-4pd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yBR-gf-qqx" secondAttribute="trailing" constant="-20" id="hvP-2E-nsI"/>
                             <constraint firstItem="2nb-dh-wyU" firstAttribute="leading" secondItem="lS1-0X-l8G" secondAttribute="leadingMargin" constant="-20" id="xU7-RE-EPv"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="uNu-6d-dbY">
-                        <rightBarButtonItems>
-                            <barButtonItem image="map" id="j6g-yF-g3a">
-                                <connections>
-                                    <action selector="changeMapType:" destination="cSu-9h-eUs" id="aJU-8r-9ge"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem image="search" id="Acf-E3-iOw"/>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" image="map" id="j6g-yF-g3a">
+                            <connections>
+                                <action selector="changeMapType:" destination="cSu-9h-eUs" id="aJU-8r-9ge"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="googleMapView" destination="yBR-gf-qqx" id="3nh-vD-awt"/>
+                        <outlet property="searchBar" destination="qKk-K3-f8C" id="Y9T-zG-il9"/>
                         <outlet property="searchDisplayController" destination="2bz-Xb-WnF" id="P5L-zY-umx"/>
                         <outlet property="tableView" destination="2nb-dh-wyU" id="94w-tf-voX"/>
                     </connections>
@@ -690,9 +728,238 @@ Cg
         </scene>
     </scenes>
     <resources>
+        <image name="52DD2418-C57A-4EAF-96E8-9F7EAC4A44C8" width="40" height="40">
+            <mutableData key="keyedArchiveRepresentation">
+YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
+GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
+DBIAwAAAgAKACtISCRMVWk5TLm9iamVjdHOhFIADgAnSEgkXGqIYGYAEgAWACBAA0h0JHh9fEBROU1RJ
+RkZSZXByZXNlbnRhdGlvboAGgAdPETKOTU0AKgAAGQgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHgABJEUABFFhAAVybAAGgFQABWMyAAM7CgAADQAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAKLwACOFIABGFtAAaBYwAFdUcABFQhAAIo
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABdAAVt
+rAAKy9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/8kADO2HAAifLgACNwAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAACcAAi6BAAeZxgAL6dkADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/7EACtFjAAV1AwAABQAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC0AAjazAArT2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/
+2QAN/9kADf/ZAA3/2QAN/9kADf9vAAaCAAAAAAAAAAAAAAAAAAAAAGUABnfZAA3/2QAN/9kADf/ZAA3/
+2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/7wAC944AANCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAE8ABF3ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/
+2QAN/6cACsUAAAAAAAAAAJoACbbZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/
+2QAN/9kADf/ZAA3/2QAN/14ABW8AAAAAAAAAAAAAAAAAAAAAAAAAADgAA0LZAA3/2QAN/9kADf/ZAA3/
+2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/iQAIon8AB5bZAA3/
+2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/
+SQAEVgAAAAAAAAAAAAAAABQAARnTAAz52QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/
+2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/
+2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf8dAAEjAAAAAAAAAACTAAit
+2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/
+2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/
+2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/qgAKyAAAAAAVAAEa2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/
+2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/
+2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/
+2QAN/9kADf8mAAItXwAFcNkADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/
+2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/
+2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/cgAGh5AACKrZAA3/
+2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/
+2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/
+2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/6QACcG4AAvZ2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/
+2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/
+2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/
+2QAN/9kADf++AAvg1AAM+tkADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/
+2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/
+2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/ywAM78IAC+XZAA3/
+2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/
+2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/
+2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/8QAC+eNAAin2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/
+2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/
+2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/
+2QAN/9kADf+iAAm/RgAEU9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/
+2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/
+2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/WQAFaQAAAADIAAzs
+2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/
+2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/
+2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/1AAM+gYAAAgAAAAASwAEWNkADf/ZAA3/2QAN/9kADf/ZAA3/
+2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/
+2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/
+2QAN/1cABWcAAAAAAAAAAAAAAACPAAip2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/
+2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/
+2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/5cACbIAAAAAAAAAAAAAAAAAAAAA
+AAAAAMIAC+TZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/
+2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/
+2QAN/9kADf/ZAA3/2QAN/8cAC+sEAAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAYAAEdzgAM89kADf/ZAA3/
+2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/
+2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/80ADPEYAAEd
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABwAASLMAAzw2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/
+2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/
+2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/84ADPMdAAEjAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAIwACKsgADOzZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/
+2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/
+2QAN/8cAC+ohAAIoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWAAEb
+0QAM9tkADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/
+2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9MADPgXAAEcAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACIAAinHAAvr2QAN/9kADf/ZAA3/
+2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/
+2QAN/9kADf/ZAA3/2QAN/8YAC+kgAAEnAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGgABIMwADPDZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/
+2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/80ADPIbAAEh
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAgAAEmzQAM8dkADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/
+2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/8wADPAcAAEiAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABkAAR7NAAzx
+2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/
+2QAN/88ADPQaAAEfAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIwACKscAC+rZAA3/2QAN/9kADf/ZAA3/
+2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/8YAC+khAAIoAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAWAAEb0AAM9dkADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/
+2QAN/9kADf/ZAA3/2QAN/9IADPcYAAEdAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAACAAASbIAAzs2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/8cAC+seAAEk
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGgABH8sADO/ZAA3/
+2QAN/9kADf/ZAA3/2QAN/9kADf/ZAA3/2QAN/80ADPIbAAEhAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAEnywAM79kADf/ZAA3/2QAN/9kADf/ZAA3/
+2QAN/8oADO4fAAElAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAABcAARzNAAzy2QAN/9kADf/ZAA3/2QAN/9AADPUYAAEdAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+JAACK8YAC+nZAA3/2QAN/8UAC+giAAIpAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAAEd2QAN/9kADf8aAAEf
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADMAAzwzAAM9AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAA4BAAADAAAAAQAoAAABAQADAAAAAQAoAAABAgADAAAABAAAGbYBAwADAAAAAQAB
+AAABBgADAAAAAQACAAABEQAEAAAAAQAAAAgBEgADAAAAAQABAAABFQADAAAAAQAEAAABFgADAAAAAQAo
+AAABFwAEAAAAAQAAGQABHAADAAAAAQABAAABUgADAAAAAQABAAABUwADAAAABAAAGb6HcwAHAAAYyAAA
+GcYAAAAAAAgACAAIAAgAAQABAAEAAQAAGMhhcHBsAhAAAG1udHJSR0IgWFlaIAfgAAEAAQAKAAIAFWFj
+c3BBUFBMAAAAAEFQUEwAAAAAAAAAAAAAAAAAAAAAAAD21gABAAAAANMtYXBwbAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEWRlc2MAAAFQAAAAYmRzY20AAAG0AAABzGNw
+cnQAAAOAAAAAI3d0cHQAAAOkAAAAFHJYWVoAAAO4AAAAFGdYWVoAAAPMAAAAFGJYWVoAAAPgAAAAFHJU
+UkMAAAP0AAAIDGFhcmcAAAwAAAAAIHZjZ3QAAAwgAAAGEm5kaW4AABI0AAAGPmNoYWQAABh0AAAALG1t
+b2QAABigAAAAKGJUUkMAAAP0AAAIDGdUUkMAAAP0AAAIDGFhYmcAAAwAAAAAIGFhZ2cAAAwAAAAAIGRl
+c2MAAAAAAAAACERpc3BsYXkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABtbHVjAAAAAAAAACIAAAAMaHJIUgAA
+ACQAAAGoa29LUgAAACQAAAGobmJOTwAAACQAAAGoaWQAAAAAACQAAAGoaHVIVQAAACQAAAGoY3NDWgAA
+ACQAAAGoZGFESwAAACQAAAGodWtVQQAAACQAAAGoYXIAAAAAACQAAAGoaXRJVAAAACQAAAGocm9STwAA
+ACQAAAGobmxOTAAAACQAAAGoaGVJTAAAACQAAAGoZXNFUwAAACQAAAGoZmlGSQAAACQAAAGoemhUVwAA
+ACQAAAGodmlWTgAAACQAAAGoc2tTSwAAACQAAAGoemhDTgAAACQAAAGocnVSVQAAACQAAAGoZnJGUgAA
+ACQAAAGobXMAAAAAACQAAAGoY2FFUwAAACQAAAGodGhUSAAAACQAAAGoZXNYTAAAACQAAAGoZGVERQAA
+ACQAAAGoZW5VUwAAACQAAAGocHRCUgAAACQAAAGocGxQTAAAACQAAAGoZWxHUgAAACQAAAGoc3ZTRQAA
+ACQAAAGodHJUUgAAACQAAAGoamFKUAAAACQAAAGocHRQVAAAACQAAAGoAEwARQBEACAAQwBpAG4AZQBt
+AGEAIABEAGkAcwBwAGwAYQB5dGV4dAAAAABDb3B5cmlnaHQgQXBwbGUgSW5jLiwgMjAxNgAAWFlaIAAA
+AAAAAPNSAAEAAAABFs9YWVogAAAAAAAAcXQAADo5AAACnVhZWiAAAAAAAABhKwAAuiwAABSsWFlaIAAA
+AAAAACQ2AAALmwAAu+NjdXJ2AAAAAAAABAAAAAAFAAoADwAUABkAHgAjACgALQAyADYAOwBAAEUASgBP
+AFQAWQBeAGMAaABtAHIAdwB8AIEAhgCLAJAAlQCaAJ8AowCoAK0AsgC3ALwAwQDGAMsA0ADVANsA4ADl
+AOsA8AD2APsBAQEHAQ0BEwEZAR8BJQErATIBOAE+AUUBTAFSAVkBYAFnAW4BdQF8AYMBiwGSAZoBoQGp
+AbEBuQHBAckB0QHZAeEB6QHyAfoCAwIMAhQCHQImAi8COAJBAksCVAJdAmcCcQJ6AoQCjgKYAqICrAK2
+AsECywLVAuAC6wL1AwADCwMWAyEDLQM4A0MDTwNaA2YDcgN+A4oDlgOiA64DugPHA9MD4APsA/kEBgQT
+BCAELQQ7BEgEVQRjBHEEfgSMBJoEqAS2BMQE0wThBPAE/gUNBRwFKwU6BUkFWAVnBXcFhgWWBaYFtQXF
+BdUF5QX2BgYGFgYnBjcGSAZZBmoGewaMBp0GrwbABtEG4wb1BwcHGQcrBz0HTwdhB3QHhgeZB6wHvwfS
+B+UH+AgLCB8IMghGCFoIbgiCCJYIqgi+CNII5wj7CRAJJQk6CU8JZAl5CY8JpAm6Cc8J5Qn7ChEKJwo9
+ClQKagqBCpgKrgrFCtwK8wsLCyILOQtRC2kLgAuYC7ALyAvhC/kMEgwqDEMMXAx1DI4MpwzADNkM8w0N
+DSYNQA1aDXQNjg2pDcMN3g34DhMOLg5JDmQOfw6bDrYO0g7uDwkPJQ9BD14Peg+WD7MPzw/sEAkQJhBD
+EGEQfhCbELkQ1xD1ERMRMRFPEW0RjBGqEckR6BIHEiYSRRJkEoQSoxLDEuMTAxMjE0MTYxODE6QTxRPl
+FAYUJxRJFGoUixStFM4U8BUSFTQVVhV4FZsVvRXgFgMWJhZJFmwWjxayFtYW+hcdF0EXZReJF64X0hf3
+GBsYQBhlGIoYrxjVGPoZIBlFGWsZkRm3Gd0aBBoqGlEadxqeGsUa7BsUGzsbYxuKG7Ib2hwCHCocUhx7
+HKMczBz1HR4dRx1wHZkdwx3sHhYeQB5qHpQevh7pHxMfPh9pH5Qfvx/qIBUgQSBsIJggxCDwIRwhSCF1
+IaEhziH7IiciVSKCIq8i3SMKIzgjZiOUI8Ij8CQfJE0kfCSrJNolCSU4JWgllyXHJfcmJyZXJocmtybo
+JxgnSSd6J6sn3CgNKD8ocSiiKNQpBik4KWspnSnQKgIqNSpoKpsqzysCKzYraSudK9EsBSw5LG4soizX
+LQwtQS12Last4S4WLkwugi63Lu4vJC9aL5Evxy/+MDUwbDCkMNsxEjFKMYIxujHyMioyYzKbMtQzDTNG
+M38zuDPxNCs0ZTSeNNg1EzVNNYc1wjX9Njc2cjauNuk3JDdgN5w31zgUOFA4jDjIOQU5Qjl/Obw5+To2
+OnQ6sjrvOy07azuqO+g8JzxlPKQ84z0iPWE9oT3gPiA+YD6gPuA/IT9hP6I/4kAjQGRApkDnQSlBakGs
+Qe5CMEJyQrVC90M6Q31DwEQDREdEikTORRJFVUWaRd5GIkZnRqtG8Ec1R3tHwEgFSEtIkUjXSR1JY0mp
+SfBKN0p9SsRLDEtTS5pL4kwqTHJMuk0CTUpNk03cTiVObk63TwBPSU+TT91QJ1BxULtRBlFQUZtR5lIx
+UnxSx1MTU19TqlP2VEJUj1TbVShVdVXCVg9WXFapVvdXRFeSV+BYL1h9WMtZGllpWbhaB1pWWqZa9VtF
+W5Vb5Vw1XIZc1l0nXXhdyV4aXmxevV8PX2Ffs2AFYFdgqmD8YU9homH1YklinGLwY0Njl2PrZEBklGTp
+ZT1lkmXnZj1mkmboZz1nk2fpaD9olmjsaUNpmmnxakhqn2r3a09rp2v/bFdsr20IbWBtuW4SbmtuxG8e
+b3hv0XArcIZw4HE6cZVx8HJLcqZzAXNdc7h0FHRwdMx1KHWFdeF2Pnabdvh3VnezeBF4bnjMeSp5iXnn
+ekZ6pXsEe2N7wnwhfIF84X1BfaF+AX5ifsJ/I3+Ef+WAR4CogQqBa4HNgjCCkoL0g1eDuoQdhICE44VH
+hauGDoZyhteHO4efiASIaYjOiTOJmYn+imSKyoswi5aL/IxjjMqNMY2Yjf+OZo7OjzaPnpAGkG6Q1pE/
+kaiSEZJ6kuOTTZO2lCCUipT0lV+VyZY0lp+XCpd1l+CYTJi4mSSZkJn8mmia1ZtCm6+cHJyJnPedZJ3S
+nkCerp8dn4uf+qBpoNihR6G2oiailqMGo3aj5qRWpMelOKWpphqmi6b9p26n4KhSqMSpN6mpqhyqj6sC
+q3Wr6axcrNCtRK24ri2uoa8Wr4uwALB1sOqxYLHWskuywrM4s660JbSctRO1irYBtnm28Ldot+C4WbjR
+uUq5wro7urW7LrunvCG8m70VvY++Cr6Evv+/er/1wHDA7MFnwePCX8Lbw1jD1MRRxM7FS8XIxkbGw8dB
+x7/IPci8yTrJuco4yrfLNsu2zDXMtc01zbXONs62zzfPuNA50LrRPNG+0j/SwdNE08bUSdTL1U7V0dZV
+1tjXXNfg2GTY6Nls2fHadtr724DcBdyK3RDdlt4c3qLfKd+v4DbgveFE4cziU+Lb42Pj6+Rz5PzlhOYN
+5pbnH+ep6DLovOlG6dDqW+rl63Dr++yG7RHtnO4o7rTvQO/M8Fjw5fFy8f/yjPMZ86f0NPTC9VD13vZt
+9vv3ivgZ+Kj5OPnH+lf65/t3/Af8mP0p/br+S/7c/23//3BhcmEAAAAAAAMAAAACZmYAAPKnAAANWQAA
+E9AAAAoOdmNndAAAAAAAAAAAAAMBAAACAAAAVgEuAesCnQNeBCkFBwXxBukH1wjfCeEK9wwFDSYOSw90
+EKAR1xMLFD4VehavF+cZKhphG5cczx4FHzUgZSGOIrIj0iTuJgInDigPKQsqAir5K+0s4S3TLsMvtTCk
+MZAyfTNqNFY1QDYqNxM3/DjlOcw6tDucPIM9aj5SPz5ALEEfQhZDEEQJRQRF/Ub3R/BI6EngSthLzkzF
+TbxOs0+tUKpRqVKqU61Ur1WxVrNXs1i0WbRas1uyXLFdr16vX7JguGHBYsxj2WTmZfRm/2gLaRZqImsr
+bDVtP25Jb1VwZXF3co1zpnS/ddh28XgJeSB6N3tOfGN9eH6Kf5eAoIGhgp+DmISPhYaGe4dxiGaJWopO
+i0GMNY0ojhyPEpALkQmSC5MQlBiVIZYrlzSYPZlFmk2bVZxbnWOea590oIChkKKho7WkyqXfpvSoCKkc
+qi+rQqxVrWeueK+IsJaxorKrs7O0urW/tsW3ybjNudG61bvYvNu9377kv+vA9cIDwxXEKMU8xlDHY8h3
+yYrKnMuvzMHN0c7gz+3Q9dH60vzT+9T41fXW8dft2OjZ49re29jc0t3N3sjfxeDG4cri0uPd5Onl9ecB
+6AzpGOoj6y7sOe1D7knvS/BE8TLyF/Ly88f0mfVr9jz3Dvff+K/5gPpR+yH78fzB/ZH+YP8w//8AAABW
+AS4B6wKdA14ELgUgBfMG6QfqCOIJ8QsKDCUNRQ5oD48QwhHzEy0UXxWZFtQYDRlNGoUbwBz2HisfXyCM
+IbQi1iP0JQ8mHCcmKCEpGCoLKvgr4izOLbouoy+MMHYxYDJJMzA0FzT9NeQ2yjevOJQ5ejpeO0I8Jj0I
+Pes+0T+4QKNBkUKCQ3dEbEViRlZHS0g+STFKI0sVTAdM+E3qTtxP0VDIUcJSvlO7VLhVtVawV6tYplmh
+WppblFyNXYdegl9/YH9hgmKKY5NknGWnZrBnuGjAachqz2vVbNxt5G7sb/hxBnIXcyx0QnVYdm53g3iX
+eax6v3vSfOR99X8CgAqBDoIMgwaD/oT0hemG3YfRiMWJuIqri56MkI2CjnePbZBnkWeSapNylHqVg5aL
+l5OYm5mimqmbsJy1nbyewp/LoNah5KL1pAalGKYqpzyoTqlfqnCrgKyQraCur6+9sMqx1bLfs+i08LX4
+tv+4BrkNuhS7GrwgvSa+LL8zwD3BSsJZw2zEf8WTxqfHusjNyeDK8swEzRbOJs810ELRTNJT01fUWtVc
+1l7XX9hg2WDaYdth3GHdYd5h32PgaOFw4nzjiuSa5avmu+fM6N3p7er87AztGu4m7y7wL/En8hfy//Ph
+9MH1oPZ+91z4OvkY+fb60/uw/I39av5G/yP//wAAAFYBLgHrAp0DXgQpBQcF8QbpB9cI3wnhCvcMBQ0m
+DksPdBCgEc4TChQ8FXMWrxfvGSoaYxubHNQeDR88IGshlyK+I+Ik/iYRJyEoKikpKicrISwaLRAuCS8A
+L/Mw5zHYMsgztjSmNZU2gzdxOF05Szo3OyM8Djz4PeM+0D/AQLNBqEKgQ5tElUWORodHgEh4SXBKZ0te
+TFRNSU4+TzZQL1EpUiZTJFQiVSFWH1ccWBlZFloSWwxcB10BXf1e+V/3YPhh+2MCZAhlD2YWZxxoIWkm
+aiprL2wybTVuOW8/cEdxUXJfc3B0gHWRdqF3sXjAec963XvrfPh+An8KgAyBCYIBgvSD5ITUhcKGr4ed
+iIqJdYphi02MOI0jjg+O/Y/tkOKR3JLYk9eU2JXZltiX2JjXmdaa1JvTnNGdz57Nn86g0aHWot2j5qTw
+pfqnBKgNqRWqHqsmrC6tNK46rz+wQ7FEskWzRLRCtUC2Pbc6uDe5M7ovuyu8Jr0ivh6/G8AbwR7CJMMt
+xDfFQsZNx1fIYslsynbLf8yIzZHOmM+e0KHRotKg05zUl9WR1ovXhNh92Xfab9to3GDdWd5T31DgUeFX
+4mLjceSC5ZXmqOe76M3p4Ory7ATtFO4k7zLwPfFE8kbzRvRD9T/2O/c2+DH5K/om+yD8Gf0T/g3/Bv//
+AABuZGluAAAAAAAABjYAAKTQAABVhwAATJEAAJ47AAAmCgAADA4AAFANAABUOQACQo8AAjMzAAIwowAD
+AQAAAgAAAAEABAAJABAAGAAhACsANwBDAFEAXwBvAH8AkACiALUAyQDdAPMBCgEhAToBVAFvAYoBpwHG
+AeUCBgIoAkwCcQKYAsEC7AMZA0gDegOvA+gEJARjBKQE6AUuBXcFwgYPBmAGswcIB2AHuwgYCHgI2gk/
+CacKEQp+Cu0LXwvRDEQMtw0qDZ4OFQ6NDwgPhRAFEIcRDBGTEh0SqRM3E8cUVxTnFXkWCxagFzcX0Bhs
+GQoZqxpOGvQbnBxHHPMdoB5NHvofpyBVIQUhtiJqIyEj2iSVJVImEybVJ5ooYCknKe0qsyt5LD8tBi3P
+LpsvaDA4MQsx3zK2M5A0bDVMNjI3HjgTOQ46EDsXPCE9Lz4/P1NAakGEQqFDwUTjRgdHKkhLSWlKhUug
+TLtN2E73UBlRPVJlU49Uu1XrVxxYT1mCWrRb5V0WXkZfd2CrYeBjGWRTZZFm0WgTaVhqoGvsbTtujm/n
+cUVyp3QNdXd25HhUecd7PXy2fjJ/sIExgrKEM4Wxhy2Ipooei5iNE46RkBGRlJMalKKWLZe7mU2a45x/
+niOf0KGFo0GlA6bJqJKqX6wwrgOv2rG0s5G1cbdRuTC7C7zivrXAhsJYxCzGAsfbybbLlc12z1rRQtMw
+1SjXMtlV25jd++B24vzlh+gX6qztRu/k8of1L/fc+o79RP//AAAAAQAEAAkAEAAXACEAKwA2AEMAUABe
+AG0AfQCOAKAAswDGANsA8AEHAR4BNwFQAWsBhgGjAcEB4AIBAiMCRgJrApICuwLmAxMDQgN1A6oD5AQh
+BGEEpQTsBTQFfwXNBh0GbwbEBxwHdgfTCDIIlAj5CWAJygo3CqYLGQuNDAMMegzxDWkN4Q5bDtcPVg/X
+EFsQ4hFrEfcShRMWE6kUPhTTFWkV/xaXFzEXzRhsGQ4ZshpYGwIbrhxcHQ0dvx5yHyUf2CCKIT0h8iKo
+I2EkHSTbJZsmXickJ+sotSmAKkwrFyvjLK4teS5GLxQv5TC4MY4yZTNANBw0+zXdNsM3rzihOZo6mzui
+PK49vT7QP+ZA/0IbQzpEXEWBRqlH0Uj5Sh5LP0xfTX1OnU++UOJSCVMyVF5VjVa+V/NZKVpiW5tc014K
+X0FgeGGxYutkKGVnZqln7Wk0an5rym0ZbmtvwHEZcnZz13U8dqR4D3l9eu58YX3Yf1GAzYJMg82FUIbS
+iFKJ0YtOjMqOSI/HkUmSzpRVld6Xa5j6moycIZ27n1mg/qKrpF6mF6fUqZWrWq0hruywubKKtF62NLgN
+uee7v72Uv2XBNMMAxM3GnMhtykDMF83wz8zRq9OO1XbXZ9ln23rdp9/r4kHkoucK6XXr5e5a8NLzT/XQ
++Fb63/1t//8AAAABAAQACQAQABgAIQArADcAQwBRAF8AbwB/AJAAogC1AMkA3gDzAQoBIgE6AVQBbgGK
+AacBxQHlAgUCJwJLAnAClwK/AuoDFgNFA3cDqwPiBB0EWgSaBNwFIQVnBbAF/AZKBpsG7wdFB50H+AhV
+CLUJFwl8CeMKTQq6CygLmAwIDHoM7A1fDdQOTA7GD0IPwRBCEMYRTBHVEmES7xN+FA4UoBUyFcYWXBb0
+F48YLBjMGW4aExq7G2UcEhzAHXAeIB7QH4EgMiDmIZsiUyMOI8skiyVNJhEm2SeiKG0pOSoFKtErnSxp
+LTcuBy7ZL64whTFeMjozGTP6NN41xza1N6s4qDmuOrs7zDzhPfo/FkA1QVhCfkOnRNNGA0czSGNJkEq6
+S+JNCU4xT1pQh1G3UulUHlVXVpJX0FkQWlNbllzYXhpfW2CcYd5jI2RqZbRnAWhQaaJq92xPbatvCnBt
+cdVzQnSydid3oHkcept8HH2ifyqAtYJDg9SFaIb8iJCKIYuwjT2OyZBWkeaTeJUMlqSYPpnbm3udHp7E
+oG+iH6PWpZWnWqklqvWsyK6fsHmyV7Q3thu4Arnsu9e9wb+nwYbDX8UxxwHI0MqgzHLOR9Af0fnT1tW2
+15rZgdtu3WLfX+Fn43nlk+ez6djsAO4r8FryjPTC9vv5N/t2/bn//wAAc2YzMgAAAAAAAQxCAAAF3v//
+8yYAAAeSAAD9kf//+6L///2jAAAD3AAAwGxtbW9kAAAAAAAABhAAAJImAgDOJ8m8F4AAAAAAAAAAAAAA
+AAAAAAAA0iIjJCVaJGNsYXNzbmFtZVgkY2xhc3Nlc18QEE5TQml0bWFwSW1hZ2VSZXCjJCYnWk5TSW1h
+Z2VSZXBYTlNPYmplY3TSIiMpKldOU0FycmF5oikn0iIjLC1eTlNNdXRhYmxlQXJyYXmjLCkn0y8wCTEy
+M1dOU1doaXRlXE5TQ29sb3JTcGFjZUQwIDAAEAOAC9IiIzU2V05TQ29sb3KiNSfSIiM4OVdOU0ltYWdl
+ojgnXxAPTlNLZXllZEFyY2hpdmVy0Tw9VHJvb3SAAQAIABEAGgAjAC0AMgA3AEUASwBUAFsAaABvAHcA
+eQB+AIAAggCHAJIAlACWAJgAnQCgAKIApACmAKgArQDEAMYAyDNaM18zajNzM4YzijOVM54zozOrM64z
+szPCM8YzzTPVM+Iz5zPpM+sz8DP4M/s0ADQINAs0HTQgNCUAAAAAAAACAQAAAAAAAAA+AAAAAAAAAAAA
+AAAAAAA0Jw
+</mutableData>
+        </image>
         <image name="map" width="30" height="30"/>
         <image name="peoplebwwithtext" width="1200" height="799"/>
-        <image name="search" width="30" height="30"/>
         <image name="twitt2" width="300" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
