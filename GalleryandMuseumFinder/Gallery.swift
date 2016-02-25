@@ -14,6 +14,8 @@ class Gallery: NSObject {
     var formattedAddress: String!
     var latitude: Double!
     var longitude: Double!
+    var stringLat: String!
+    var stringLong: String!
     
     
     init(galleryDictionary: NSDictionary) {
@@ -24,6 +26,7 @@ class Gallery: NSObject {
         formattedAddress = galleryDictionary["formatted_address"] as! String
         latitude = locationDictionary!!["lat"] as! Double
         longitude = locationDictionary!!["lng"] as! Double
-        
+//        self.latitude = Double(self.stringLat)!
+//        self.longitude = Double(self.stringLong)!
     }
 }
