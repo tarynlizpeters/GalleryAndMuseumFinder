@@ -293,11 +293,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
             print (lat)
             print (lng)
             
-            //     let  position = CLLocationCoordinate2DMake(lat, lng)
-            //    let marker = GMSMarker(position: position)
-            //            marker.title = "Hello World"
-            //            marker.map = googleMapView
-            
+      
         }
         
     }

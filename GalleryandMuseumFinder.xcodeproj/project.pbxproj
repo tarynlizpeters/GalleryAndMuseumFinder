@@ -30,7 +30,7 @@
 		DF53E6251C7CEC6500BD3AEF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30C8FD0A1C76291F0007D48C /* MapKit.framework */; };
 		DF53E6271C7CFB6100BD3AEF /* MapTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF53E6261C7CFB6100BD3AEF /* MapTasks.swift */; };
 		DF53E62D1C7E15C800BD3AEF /* CustomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF53E62C1C7E15C800BD3AEF /* CustomHeaderView.swift */; };
-		DF53E6311C7E919100BD3AEF /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF53E6301C7E919100BD3AEF /* TableViewCell.swift */; };
+		DF53E6331C7F587C00BD3AEF /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF53E6321C7F587C00BD3AEF /* TableViewCell.swift */; };
 		FC6489CF3E7720E6299738EE /* Pods_GalleryandMuseumFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 930E2401F11E2ED4E7993804 /* Pods_GalleryandMuseumFinder.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,7 +66,7 @@
 		DF53E6211C7BABD900BD3AEF /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DF53E6261C7CFB6100BD3AEF /* MapTasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapTasks.swift; sourceTree = "<group>"; };
 		DF53E62C1C7E15C800BD3AEF /* CustomHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomHeaderView.swift; sourceTree = "<group>"; };
-		DF53E6301C7E919100BD3AEF /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		DF53E6321C7F587C00BD3AEF /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,8 +126,8 @@
 				30C8FCF21C74FA4F0007D48C /* DataService.swift */,
 				30C8FD021C753D9C0007D48C /* LoginViewC+TwitterFuctionality.swift */,
 				952C0C5E1C738DCF005BC9E7 /* Main.storyboard */,
+				DF53E6321C7F587C00BD3AEF /* TableViewCell.swift */,
 				DF53E6211C7BABD900BD3AEF /* ViewController.swift */,
-				DF53E6301C7E919100BD3AEF /* TableViewCell.swift */,
 				DF53E6261C7CFB6100BD3AEF /* MapTasks.swift */,
 				DF53E62C1C7E15C800BD3AEF /* CustomHeaderView.swift */,
 				30C8FCF61C7507860007D48C /* LoginViewController.swift */,
@@ -285,7 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF53E6221C7BABD900BD3AEF /* ViewController.swift in Sources */,
-				DF53E6311C7E919100BD3AEF /* TableViewCell.swift in Sources */,
+				DF53E6331C7F587C00BD3AEF /* TableViewCell.swift in Sources */,
 				30C8FCFB1C7507B70007D48C /* RegisterViewController.swift in Sources */,
 				DF53E6201C7BAB7700BD3AEF /* GMtableView.swift in Sources */,
 				DF53E6271C7CFB6100BD3AEF /* MapTasks.swift in Sources */,
