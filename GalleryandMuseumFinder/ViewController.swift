@@ -47,6 +47,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.automaticallyAdjustsScrollViewInsets = false
+        
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
