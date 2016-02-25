@@ -289,6 +289,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let gallery = galleryArray[indexPath.row]
+        let cell = self.tableView.cellForRowAtIndexPath(indexPath)
+        let text = cell?.textLabel?.text
         let lat = gallery.latitude
         let lng = gallery.longitude
         let position = CLLocationCoordinate2DMake(lat, lng)
