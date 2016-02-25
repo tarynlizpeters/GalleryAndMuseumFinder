@@ -26,6 +26,7 @@
 		952C0C711C73992D005BC9E7 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952C0C701C73992D005BC9E7 /* CommentViewController.swift */; };
 		DF0D48FC1C8002AB00E9889F /* CustomInfoWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0D48FB1C8002AB00E9889F /* CustomInfoWindow.swift */; };
 		DF0D48FE1C8002C600E9889F /* CustomInfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF0D48FD1C8002C600E9889F /* CustomInfoWindow.xib */; };
+		95D2FAF81C7FA8FD005E163C /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D2FAF71C7FA8FD005E163C /* IntroViewController.swift */; };
 		DF53E61C1C7A558F00BD3AEF /* Gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF53E61B1C7A558F00BD3AEF /* Gallery.swift */; };
 		DF53E6201C7BAB7700BD3AEF /* GMtableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF53E61F1C7BAB7700BD3AEF /* GMtableView.swift */; };
 		DF53E6221C7BABD900BD3AEF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF53E6211C7BABD900BD3AEF /* ViewController.swift */; };
@@ -65,6 +66,7 @@
 		952C0C701C73992D005BC9E7 /* CommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		DF0D48FB1C8002AB00E9889F /* CustomInfoWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInfoWindow.swift; sourceTree = "<group>"; };
 		DF0D48FD1C8002C600E9889F /* CustomInfoWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomInfoWindow.xib; sourceTree = "<group>"; };
+		95D2FAF71C7FA8FD005E163C /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		DF53E61B1C7A558F00BD3AEF /* Gallery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gallery.swift; sourceTree = "<group>"; };
 		DF53E61F1C7BAB7700BD3AEF /* GMtableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMtableView.swift; sourceTree = "<group>"; };
 		DF53E6211C7BABD900BD3AEF /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				DF53E6261C7CFB6100BD3AEF /* MapTasks.swift */,
 				DF53E62C1C7E15C800BD3AEF /* CustomHeaderView.swift */,
 				30C8FCF61C7507860007D48C /* LoginViewController.swift */,
+				95D2FAF71C7FA8FD005E163C /* IntroViewController.swift */,
 				30C8FCF81C7507A00007D48C /* ResetViewController.swift */,
 				30C8FCFA1C7507B70007D48C /* RegisterViewController.swift */,
 				952C0C701C73992D005BC9E7 /* CommentViewController.swift */,
@@ -298,6 +301,7 @@
 				DF53E6271C7CFB6100BD3AEF /* MapTasks.swift in Sources */,
 				30C8FCF71C7507860007D48C /* LoginViewController.swift in Sources */,
 				30C8FCF11C74F9630007D48C /* Constants.swift in Sources */,
+				95D2FAF81C7FA8FD005E163C /* IntroViewController.swift in Sources */,
 				952C0C711C73992D005BC9E7 /* CommentViewController.swift in Sources */,
 				952C0C6F1C7391F6005BC9E7 /* DetailViewController.swift in Sources */,
 				30C8FCF31C74FA4F0007D48C /* DataService.swift in Sources */,
