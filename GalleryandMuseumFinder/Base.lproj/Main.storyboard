@@ -564,10 +564,10 @@
             </objects>
             <point key="canvasLocation" x="4965" y="1069"/>
         </scene>
-        <!--View Controller-->
+        <!--Intro View Controller-->
         <scene sceneID="SSN-3j-0cU">
             <objects>
-                <viewController id="0Tq-dE-f6C" sceneMemberID="viewController">
+                <viewController id="0Tq-dE-f6C" customClass="IntroViewController" customModule="GalleryandMuseumFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ToQ-wY-fXr"/>
                         <viewControllerLayoutGuide type="bottom" id="cGL-ya-vt8"/>
@@ -625,6 +625,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
+                                    <action selector="newAccountButton:" destination="0Tq-dE-f6C" eventType="touchUpInside" id="1ha-kc-aVj"/>
                                     <segue destination="qxl-yM-6TG" kind="presentation" identifier="ToLoginSegue" modalTransitionStyle="flipHorizontal" id="svW-A4-iVx"/>
                                 </connections>
                             </button>
@@ -674,6 +675,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
+                                    <action selector="newAccountButton:" destination="0Tq-dE-f6C" eventType="touchUpInside" id="vga-0A-dDS"/>
                                     <segue destination="IyO-zl-suc" kind="presentation" id="AbR-yz-ni5"/>
                                 </connections>
                             </button>
@@ -785,6 +787,11 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="loginButton" destination="fCa-Fx-5Ev" id="Mrf-gs-YYv"/>
+                        <outlet property="newAccountButton" destination="RCB-45-ySy" id="fgL-c8-xZW"/>
+                        <segue destination="SJv-zd-H5p" kind="presentation" identifier="EnterAppSegue2" modalTransitionStyle="coverVertical" id="6fj-oE-PKP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B3P-8E-C0r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -954,50 +961,12 @@
                     <connections>
                         <outlet property="emailTextField" destination="mw4-4k-18s" id="jFx-gX-pp5"/>
                         <outlet property="passwordTextField" destination="rbw-hY-7Dk" id="qbm-4J-s2P"/>
-                        <segue destination="SJv-zd-H5p" kind="presentation" identifier="EnterAppSegue" id="2Qt-Nb-oYg"/>
+                        <segue destination="SJv-zd-H5p" kind="presentation" identifier="EnterAppSegue1" id="2Qt-Nb-oYg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bGz-yq-Ijp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1374" y="291"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="jWF-6k-evS">
-            <objects>
-                <viewController id="R5a-FS-lei" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="c73-Ug-h6j"/>
-                        <viewControllerLayoutGuide type="bottom" id="wCH-kz-sqq"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Pf1-QN-JrE">
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y6F-Le-lJa">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="28" width="400" height="350"/>
-                                </variation>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="Y6F-Le-lJa"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="Y6F-Le-lJa"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <connections>
-                        <segue destination="cSu-9h-eUs" kind="presentation" id="D6J-I8-tvG"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="V9m-c7-cy9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1204.5" y="-357"/>
+            <point key="canvasLocation" x="-1324.5" y="99"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SIA-xU-b5z">
@@ -1098,7 +1067,7 @@ Cg
                                                         <rect key="frame" x="26" y="8" width="327" height="38"/>
                                                     </variation>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="091B01AA-E54D-40E3-BD43-5012B6329C24" translatesAutoresizingMaskIntoConstraints="NO" id="gmJ-4c-BsK" userLabel="Cell Image">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="7EF39E5D-5239-4941-BF33-894F6D7E1B01" translatesAutoresizingMaskIntoConstraints="NO" id="gmJ-4c-BsK" userLabel="Cell Image">
                                                     <rect key="frame" x="513" y="5" width="65" height="73"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Address Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7wA-fH-UhB" userLabel="Addres Label">
@@ -1115,7 +1084,7 @@ Cg
                                                         </mask>
                                                     </variation>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="091B01AA-E54D-40E3-BD43-5012B6329C24" translatesAutoresizingMaskIntoConstraints="NO" id="ebQ-V3-Ne1" userLabel="Cell Image">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="7EF39E5D-5239-4941-BF33-894F6D7E1B01" translatesAutoresizingMaskIntoConstraints="NO" id="ebQ-V3-Ne1" userLabel="Cell Image">
                                                     <rect key="frame" x="513" y="8" width="65" height="73"/>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
                                                         <rect key="frame" x="293" y="5" width="65" height="73"/>
@@ -1334,7 +1303,7 @@ Cg
         </scene>
     </scenes>
     <resources>
-        <image name="091B01AA-E54D-40E3-BD43-5012B6329C24" width="40" height="40">
+        <image name="7EF39E5D-5239-4941-BF33-894F6D7E1B01" width="40" height="40">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOzxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISksLzU4VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
@@ -1580,7 +1549,7 @@ AAAAPwAAAAAAAAAAAAAAAAAANoo
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="svW-A4-iVx"/>
+        <segue reference="6fj-oE-PKP"/>
         <segue reference="AbR-yz-ni5"/>
-        <segue reference="D6J-I8-tvG"/>
     </inferredMetricsTieBreakers>
 </document>

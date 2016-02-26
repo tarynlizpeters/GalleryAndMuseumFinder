@@ -70,7 +70,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
         //if we have the uid stored, the user is already  logged in - no need to sign in
         if NSUserDefaults.standardUserDefaults().valueForKey("uid") != nil && DataService.dataService.CURRENT_USER_REF.authData != nil {
             //proceed to enter the app
-            self.performSegueWithIdentifier("EnterAppSegue", sender: nil)
+            self.performSegueWithIdentifier("EnterAppSegue1", sender: nil)
         }
     }
     
