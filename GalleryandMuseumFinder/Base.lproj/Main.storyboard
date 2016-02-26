@@ -83,7 +83,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u6p-P9-b5A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-692" y="601"/>
+            <point key="canvasLocation" x="-1018.5" y="234"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="I2r-NB-EWV">
@@ -196,7 +196,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="agW-JC-tCb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1420" y="1128"/>
+            <point key="canvasLocation" x="-2478" y="1012"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="Vxu-HN-0vx">
@@ -289,7 +289,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mjD-jX-znG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2582" y="411"/>
+            <point key="canvasLocation" x="1936.5" y="234"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="SSN-3j-0cU">
@@ -382,7 +382,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B3P-8E-C0r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2227" y="241"/>
+            <point key="canvasLocation" x="-2478" y="234"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="dDL-Ut-ySh">
@@ -482,7 +482,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bGz-yq-Ijp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1374" y="291"/>
+            <point key="canvasLocation" x="-1759.5" y="234"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SIA-xU-b5z">
@@ -500,7 +500,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lJM-NA-Ezd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1756" y="411"/>
+            <point key="canvasLocation" x="1219.5" y="234"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="noo-me-tD8">
@@ -542,7 +542,7 @@
                                                         <rect key="frame" x="26" y="8" width="327" height="38"/>
                                                     </variation>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="500CD849-CCDD-4DCA-84C2-DBCBEF6C311D" translatesAutoresizingMaskIntoConstraints="NO" id="ebQ-V3-Ne1" userLabel="Cell Image">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DD521C90-7F3B-4CB0-AA1A-DB106D00DA4E" translatesAutoresizingMaskIntoConstraints="NO" id="ebQ-V3-Ne1" userLabel="Cell Image">
                                                     <rect key="frame" x="513" y="8" width="65" height="73"/>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
                                                         <rect key="frame" x="361" y="8" width="16" height="16"/>
@@ -644,12 +644,13 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="qKk-K3-f8C">
+                            <searchBar contentMode="redraw" placeholder="Search Nearby Art Galleries" translatesAutoresizingMaskIntoConstraints="NO" id="qKk-K3-f8C">
                                 <rect key="frame" x="0.0" y="301" width="600" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="c9f-im-Cba"/>
                                     <constraint firstAttribute="height" constant="44" id="zup-Xp-0Fz"/>
                                 </constraints>
+                                <color key="barTintColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -745,6 +746,7 @@
                         <outlet property="searchBar" destination="qKk-K3-f8C" id="Y9T-zG-il9"/>
                         <outlet property="searchDisplayController" destination="2bz-Xb-WnF" id="P5L-zY-umx"/>
                         <outlet property="tableView" destination="2nb-dh-wyU" id="94w-tf-voX"/>
+                        <segue destination="rrM-Qt-Qrh" kind="show" identifier="toDetailViewController" id="1sf-pJ-xRY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PWg-hW-uwg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -757,7 +759,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="783" y="386"/>
+            <point key="canvasLocation" x="490.5" y="234"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jhm-yw-lap">
@@ -776,11 +778,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P93-34-QIs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-20" y="386"/>
+            <point key="canvasLocation" x="-277.5" y="234"/>
         </scene>
     </scenes>
     <resources>
-        <image name="500CD849-CCDD-4DCA-84C2-DBCBEF6C311D" width="40" height="40">
+        <image name="DD521C90-7F3B-4CB0-AA1A-DB106D00DA4E" width="40" height="40">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
@@ -1025,6 +1027,6 @@ JTYyNjc2OTY7NkA2SDZLNlA2WDZbNm02cDZ1AAAAAAAAAgEAAAAAAAAAPgAAAAAAAAAAAAAAAAAANnc
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="svW-A4-iVx"/>
-        <segue reference="AbR-yz-ni5"/>
+        <segue reference="j33-1F-qe5"/>
     </inferredMetricsTieBreakers>
 </document>

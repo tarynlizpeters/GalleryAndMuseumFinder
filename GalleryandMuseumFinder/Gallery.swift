@@ -17,6 +17,7 @@ class Gallery  {
     var stringLat: String!
     var stringLong: String!
     var CLCoordinate = CLLocationCoordinate2D()
+    var placeID: String!
     
     
     init(galleryDictionary: NSDictionary) {
@@ -27,10 +28,7 @@ class Gallery  {
         formattedAddress = galleryDictionary["formatted_address"] as! String
         latitude = locationDictionary!!["lat"] as! Double
         longitude = locationDictionary!!["lng"] as! Double
-
-//        self.latitude = Double(self.stringLat)!
-//        self.longitude = Double(self.stringLong)!
-
+        placeID = galleryDictionary["place_id"] as! String
         
         CLCoordinate = CLLocationCoordinate2DMake(latitude, longitude)
         
