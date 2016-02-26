@@ -58,6 +58,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
         googleMapView.delegate = self
         
         googleMapView.settings.myLocationButton = true
+        googleMapView.settings.compassButton = true
         googleMapView.myLocationEnabled = true
         
         googleMapView.addObserver(self, forKeyPath: "myLocation", options: NSKeyValueObservingOptions.New, context: nil)
