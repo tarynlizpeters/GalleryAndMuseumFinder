@@ -58,6 +58,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
         googleMapView.delegate = self
         
         googleMapView.settings.myLocationButton = true
+        googleMapView.settings.compassButton = true
         googleMapView.myLocationEnabled = true
         
         googleMapView.addObserver(self, forKeyPath: "myLocation", options: NSKeyValueObservingOptions.New, context: nil)
@@ -296,6 +297,11 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
         marker.map = self.googleMapView
         self.tableView.reloadData()
         
+    }
+    func mapView(mapView: GMSMapView!, markerInfoWindow marker: GMSMarker!) -> UIView! {
+        let infoWindow = NSBundle.mainBundle().loadNibNamed("CustomInfoWindow", owner: self, options: nil).first! as! CustomInfoWindow
+        infoWindow.label.text = marker.title
+        return infoWindow
     }
  
 }

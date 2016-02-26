@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -566,10 +567,10 @@
                                         <rect key="frame" x="0.0" y="192" width="600" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XS4-cq-tsV" id="L7i-1c-AYk">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ZJ-fm-to6" userLabel="Cell Name">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ZJ-fm-to6" userLabel="Cell Name">
                                                     <rect key="frame" x="26" y="5" width="471" height="38"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -578,13 +579,13 @@
                                                         <rect key="frame" x="26" y="8" width="327" height="38"/>
                                                     </variation>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="E1056ACC-CE66-4B2B-9A1B-DBD0422550F1" translatesAutoresizingMaskIntoConstraints="NO" id="ebQ-V3-Ne1" userLabel="Cell Image">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="F4ACC6EE-2B2E-47AB-81BC-2D88937B91D1" translatesAutoresizingMaskIntoConstraints="NO" id="ebQ-V3-Ne1" userLabel="Cell Image">
                                                     <rect key="frame" x="513" y="8" width="65" height="73"/>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
                                                         <rect key="frame" x="361" y="8" width="16" height="16"/>
                                                     </variation>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7wA-fH-UhB" userLabel="Addres Label">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Address Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7wA-fH-UhB" userLabel="Addres Label">
                                                     <rect key="frame" x="26" y="40" width="471" height="38"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="38" id="EXC-8D-ypu"/>
@@ -731,6 +732,8 @@
                                 <exclude reference="qKk-K3-f8C"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="BSF-sI-jSI"/>
+                                <exclude reference="HRD-0y-OGu"/>
                                 <exclude reference="0QT-2Q-fU0"/>
                                 <exclude reference="1pp-pp-wBt"/>
                                 <exclude reference="I1E-kq-P5w"/>
@@ -741,8 +744,6 @@
                                 <exclude reference="F0D-ns-gKp"/>
                                 <exclude reference="i93-BY-DIX"/>
                                 <exclude reference="seM-rF-5wd"/>
-                                <exclude reference="BSF-sI-jSI"/>
-                                <exclude reference="HRD-0y-OGu"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -751,6 +752,8 @@
                                 <include reference="qKk-K3-f8C"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="BSF-sI-jSI"/>
+                                <include reference="HRD-0y-OGu"/>
                                 <include reference="0QT-2Q-fU0"/>
                                 <include reference="1pp-pp-wBt"/>
                                 <include reference="I1E-kq-P5w"/>
@@ -764,8 +767,6 @@
                                 <exclude reference="hvP-2E-nsI"/>
                                 <include reference="i93-BY-DIX"/>
                                 <include reference="seM-rF-5wd"/>
-                                <include reference="BSF-sI-jSI"/>
-                                <include reference="HRD-0y-OGu"/>
                             </mask>
                         </variation>
                     </view>
@@ -803,6 +804,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="IAb-HJ-b3o">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="0.5" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -815,7 +817,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="E1056ACC-CE66-4B2B-9A1B-DBD0422550F1" width="40" height="40">
+        <image name="F4ACC6EE-2B2E-47AB-81BC-2D88937B91D1" width="40" height="40">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
