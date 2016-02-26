@@ -12,5 +12,9 @@ class CustomInfoWindow: UIView {
 
     @IBOutlet var label: UILabel!
 
+    
+    @IBAction func onTapSeque(sender: UITapGestureRecognizer) {
+    }
+    
+    }
 
-}
