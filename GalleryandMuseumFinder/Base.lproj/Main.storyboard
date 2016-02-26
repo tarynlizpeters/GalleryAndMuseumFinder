@@ -579,7 +579,7 @@
                                                         <rect key="frame" x="26" y="8" width="327" height="38"/>
                                                     </variation>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="6BB36C72-BC23-4FC8-9C18-A13B326B191B" translatesAutoresizingMaskIntoConstraints="NO" id="ebQ-V3-Ne1" userLabel="Cell Image">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="F4ACC6EE-2B2E-47AB-81BC-2D88937B91D1" translatesAutoresizingMaskIntoConstraints="NO" id="ebQ-V3-Ne1" userLabel="Cell Image">
                                                     <rect key="frame" x="513" y="8" width="65" height="73"/>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
                                                         <rect key="frame" x="361" y="8" width="16" height="16"/>
@@ -804,6 +804,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="IAb-HJ-b3o">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="0.5" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -816,7 +817,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="6BB36C72-BC23-4FC8-9C18-A13B326B191B" width="40" height="40">
+        <image name="F4ACC6EE-2B2E-47AB-81BC-2D88937B91D1" width="40" height="40">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
