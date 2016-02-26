@@ -16,15 +16,14 @@ var tableView: UITableView!
 class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate, GMSMapViewDelegate, UISearchBarDelegate, UISearchControllerDelegate {
     
     @IBOutlet weak var tableView: GMtableView!
-
+    
     @IBOutlet weak var googleMapView: GMSMapView!
-
+    
     @IBOutlet weak var searchBar: UISearchBar!
     
     var galleries = [NSDictionary]()
     
     var galleryArray = [Gallery]()
-
     
     var filtered = [Gallery]()
     
@@ -66,9 +65,6 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
         self.tableView.backgroundColor = UIColor.clearColor()
         self.tableView.rowHeight = 50
         
-
-
-        
         let url1 = String("https://maps.googleapis.com/maps/api/place/textsearch/json?query=Chicago&type=art_gallery&key=AIzaSyDNopD2lCPhs0z-Uap3f8EPUt9R3gGjGjg")
         let url2 = String("https://maps.googleapis.com/maps/api/place/textsearch/json?query=Chicago&type=art_gallery&key=AIzaSyDNopD2lCPhs0z-Uap3f8EPUt9R3gGjGjg&pagetoken=CqQDoAEAAHsw7tThV1V22yk57l00EASB3lYL9ANG0Zhi287TWYStsLLP2jMJjXIdsY41Pi3fTBvmrsoK1v_0-CfeHZkmGT5fHeHIEcTEj5kYsR1_uYqxooZVul1s7iFOzqzKMKz089JOpKNvedao71Oku_qBtaiJ25bmTF2laXsfAbrXH3sHi3CsdKdQiT8xo-bFgDiZlEGIBGlso3HM5YY5E2Wsg54uMYKU4_2RbD-xJVhl6JAobW8cn4mqe7UwAt8g3Iv0SxxUKuP8mOTcZXo60EfQ5snqXaNvWzy2yxcDbBtff6FTnjNuqYIOhVNg7SF0eyRZv2zcgbuU29WkyjZHUp5RqTyycZ-S6WyBCFv1GvcNy9TGf83VUzq6uZBxN6dEYOv35R9SIJ5NNNjetO97CnLNqJcXhC4JjLLRuwJUbGati2ZN5SKrIxGdeQSxkf7OETrQ81JQAkVzfD1Ap-Z7R3_lq7nNz_4vX9vXt-w9iIsGFQnXB0wUz_ODjtHz-_fcLl2ErgSj-sKdBZ5h2jLFlLcUscxjMhsLkgniJg6CmpWCCAx2EhAf0iT0qNwxOo02HZp0HED6GhQqM42r8FUYp8QIN4ynhH6SgG0dAA")
         let url3 = String("https://maps.googleapis.com/maps/api/place/textsearch/json?query=Chicago&type=art_gallery&key=AIzaSyDNopD2lCPhs0z-Uap3f8EPUt9R3gGjGjg&pagetoken=CvQB4QAAAN97q78lv5-0k4ymrAN634vgCQ4ZRpsi9Irq0GWm0Wsa5_jP2mnIPo_S1mMJHYTRuhBESfjgdrjfm43VnQhzXodXbeIfXTWb0Z1fYIL9cRIbGWMLHc-CI--fMDDbHuiOPK3M9W2drdb0lBrOWx2B0mgAaqNGc4H6PnGJ8wBYdp5ulc-6w5G1Obm1ai7pMECABc_AOVVSXZSqFHyPJ-oytt9kA54Z60NbuJyl86KBLSELhDMZYfPez6Z84zUZB-qmZyEws4t64i5SeH_WF4QszlRJsG86S9JnI-3tX-pBqyPD8DicdFYWbNFx_0OoRG6zARIQPNcliuomX5_JWRt5Ys1FNRoUEx8nzZJdYx7iY11qji1L8YOhkg4")
@@ -94,7 +90,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
                 for dictionary in galleries1 {
                     let galleryObject:Gallery = Gallery(galleryDictionary: dictionary)
                     self.galleryArray.append(galleryObject)
-
+                    
                 }
                 
                 dispatch_async(dispatch_get_main_queue()) { () -> Void in
@@ -107,7 +103,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
             }
             
         }
-       
+        
         task.resume()
         
         let task2 = session2.dataTaskWithURL(urlTwo!) { (data , response, error ) -> Void in
@@ -174,9 +170,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
                 for dictionary in galleries4 {
                     let galleryObject:Gallery = Gallery(galleryDictionary: dictionary)
                     self.galleryArray.append(galleryObject)
-        
-                    print(self.galleryArray)
-
+                
+                    
                 }
                 dispatch_async(dispatch_get_main_queue()) { () -> Void in
                     self.tableView.reloadData()
@@ -205,6 +200,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
         
         if searchText == "" {
             isSearchActive = false
+            self.searchBar.endEditing(true)
         }
         else {
             isSearchActive = true
@@ -221,7 +217,6 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
             didFindMyLocation = true
         }
     }
-    
     
     // MARK Change Map Type View
     
@@ -268,7 +263,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
             return filtered.count
         }
         else {
-        return galleryArray.count
+            return galleryArray.count
         }
         
     }
@@ -286,42 +281,28 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
             cell.addressLabel.text = galleryArray[indexPath.row].formattedAddress
             cell.cellImage.image = UIImage(imageLiteral: "likeImage")
         }
-
+        
         return cell
     }
     
-    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        let cell = self.tableView.cellForRowAtIndexPath(indexPath)
-        let text = cell?.textLabel?.text
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let gallery = galleryArray[indexPath.row]
         let lat = gallery.latitude
         let lng = gallery.longitude
         let position = CLLocationCoordinate2DMake(lat, lng)
         let marker = GMSMarker(position: position)
+        marker.appearAnimation = GoogleMaps.kGMSMarkerAnimationPop
         marker.title = gallery.name
         marker.map = self.googleMapView
-        
-        
-
-//        let address = gallery.objectForKey("formatted_address") as? String
-//        let lat = gallery.objectForKey("lat")
-//        let lng = gallery.objectForKey("lng")
-//        if let text = text {
-//            print("did select and the text is \(text)")
-//            print (address)
-//            print (lat)
-//            print (lng)
-
-        
-            
-      
-
-        }
+        self.tableView.reloadData()
         
     }
-    
+ 
+}
 
-    
+
+
+
 
 
 
