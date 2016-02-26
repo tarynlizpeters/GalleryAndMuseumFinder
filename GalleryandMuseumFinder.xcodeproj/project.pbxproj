@@ -24,6 +24,8 @@
 		952C0C651C738DCF005BC9E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 952C0C631C738DCF005BC9E7 /* LaunchScreen.storyboard */; };
 		952C0C6F1C7391F6005BC9E7 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952C0C6E1C7391F6005BC9E7 /* DetailViewController.swift */; };
 		952C0C711C73992D005BC9E7 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952C0C701C73992D005BC9E7 /* CommentViewController.swift */; };
+		DF0D48FC1C8002AB00E9889F /* CustomInfoWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0D48FB1C8002AB00E9889F /* CustomInfoWindow.swift */; };
+		DF0D48FE1C8002C600E9889F /* CustomInfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF0D48FD1C8002C600E9889F /* CustomInfoWindow.xib */; };
 		DF53E61C1C7A558F00BD3AEF /* Gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF53E61B1C7A558F00BD3AEF /* Gallery.swift */; };
 		DF53E6201C7BAB7700BD3AEF /* GMtableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF53E61F1C7BAB7700BD3AEF /* GMtableView.swift */; };
 		DF53E6221C7BABD900BD3AEF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF53E6211C7BABD900BD3AEF /* ViewController.swift */; };
@@ -61,6 +63,8 @@
 		952C0C661C738DCF005BC9E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		952C0C6E1C7391F6005BC9E7 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		952C0C701C73992D005BC9E7 /* CommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
+		DF0D48FB1C8002AB00E9889F /* CustomInfoWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInfoWindow.swift; sourceTree = "<group>"; };
+		DF0D48FD1C8002C600E9889F /* CustomInfoWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomInfoWindow.xib; sourceTree = "<group>"; };
 		DF53E61B1C7A558F00BD3AEF /* Gallery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gallery.swift; sourceTree = "<group>"; };
 		DF53E61F1C7BAB7700BD3AEF /* GMtableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMtableView.swift; sourceTree = "<group>"; };
 		DF53E6211C7BABD900BD3AEF /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +132,8 @@
 				952C0C5E1C738DCF005BC9E7 /* Main.storyboard */,
 				DF53E6321C7F587C00BD3AEF /* TableViewCell.swift */,
 				DF53E6211C7BABD900BD3AEF /* ViewController.swift */,
+				DF0D48FB1C8002AB00E9889F /* CustomInfoWindow.swift */,
+				DF0D48FD1C8002C600E9889F /* CustomInfoWindow.xib */,
 				DF53E6261C7CFB6100BD3AEF /* MapTasks.swift */,
 				DF53E62C1C7E15C800BD3AEF /* CustomHeaderView.swift */,
 				30C8FCF61C7507860007D48C /* LoginViewController.swift */,
@@ -222,6 +228,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF0D48FE1C8002C600E9889F /* CustomInfoWindow.xib in Resources */,
 				952C0C651C738DCF005BC9E7 /* LaunchScreen.storyboard in Resources */,
 				30324A171C7677DE00D016E3 /* GoogleService-Info.plist in Resources */,
 				952C0C621C738DCF005BC9E7 /* Assets.xcassets in Resources */,
@@ -298,6 +305,7 @@
 				DF53E62D1C7E15C800BD3AEF /* CustomHeaderView.swift in Sources */,
 				30C8FD031C753D9C0007D48C /* LoginViewC+TwitterFuctionality.swift in Sources */,
 				30C8FCF91C7507A00007D48C /* ResetViewController.swift in Sources */,
+				DF0D48FC1C8002AB00E9889F /* CustomInfoWindow.swift in Sources */,
 				DF53E61C1C7A558F00BD3AEF /* Gallery.swift in Sources */,
 				30C8FD061C753E9D0007D48C /* TwitterAuthHelper.m in Sources */,
 			);

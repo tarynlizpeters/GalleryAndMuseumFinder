@@ -298,6 +298,11 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
         self.tableView.reloadData()
         
     }
+    func mapView(mapView: GMSMapView!, markerInfoWindow marker: GMSMarker!) -> UIView! {
+        let infoWindow = NSBundle.mainBundle().loadNibNamed("CustomInfoWindow", owner: self, options: nil).first! as! CustomInfoWindow
+        infoWindow.label.text = marker.title
+        return infoWindow
+    }
  
 }
 
