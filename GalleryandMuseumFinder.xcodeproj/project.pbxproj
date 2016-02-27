@@ -33,6 +33,7 @@
 		DF53E6271C7CFB6100BD3AEF /* MapTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF53E6261C7CFB6100BD3AEF /* MapTasks.swift */; };
 		DF53E62D1C7E15C800BD3AEF /* CustomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF53E62C1C7E15C800BD3AEF /* CustomHeaderView.swift */; };
 		DF53E6331C7F587C00BD3AEF /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF53E6321C7F587C00BD3AEF /* TableViewCell.swift */; };
+		DF785F8D1C811DDB000DC875 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF785F8C1C811DDB000DC875 /* IntroViewController.swift */; };
 		FC6489CF3E7720E6299738EE /* Pods_GalleryandMuseumFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 930E2401F11E2ED4E7993804 /* Pods_GalleryandMuseumFinder.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		DF53E6261C7CFB6100BD3AEF /* MapTasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapTasks.swift; sourceTree = "<group>"; };
 		DF53E62C1C7E15C800BD3AEF /* CustomHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomHeaderView.swift; sourceTree = "<group>"; };
 		DF53E6321C7F587C00BD3AEF /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		DF785F8C1C811DDB000DC875 /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 				952C0C5E1C738DCF005BC9E7 /* Main.storyboard */,
 				DF53E6321C7F587C00BD3AEF /* TableViewCell.swift */,
 				DF53E6211C7BABD900BD3AEF /* ViewController.swift */,
+				DF785F8C1C811DDB000DC875 /* IntroViewController.swift */,
 				DF0D48FB1C8002AB00E9889F /* CustomInfoWindow.swift */,
 				DF0D48FD1C8002C600E9889F /* CustomInfoWindow.xib */,
 				DF53E6261C7CFB6100BD3AEF /* MapTasks.swift */,
@@ -300,6 +303,7 @@
 				30C8FCF11C74F9630007D48C /* Constants.swift in Sources */,
 				952C0C711C73992D005BC9E7 /* CommentViewController.swift in Sources */,
 				952C0C6F1C7391F6005BC9E7 /* DetailViewController.swift in Sources */,
+				DF785F8D1C811DDB000DC875 /* IntroViewController.swift in Sources */,
 				30C8FCF31C74FA4F0007D48C /* DataService.swift in Sources */,
 				952C0C5B1C738DCF005BC9E7 /* AppDelegate.swift in Sources */,
 				DF53E62D1C7E15C800BD3AEF /* CustomHeaderView.swift in Sources */,
