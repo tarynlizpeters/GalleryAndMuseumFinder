@@ -146,7 +146,7 @@
                                                         <rect key="frame" x="26" y="8" width="327" height="38"/>
                                                     </variation>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="8559E40C-B88F-4D43-BA8E-F7237E9DE2E7" translatesAutoresizingMaskIntoConstraints="NO" id="ebQ-V3-Ne1" userLabel="Cell Image">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="F27083EE-810C-418B-8532-31AD27288307" translatesAutoresizingMaskIntoConstraints="NO" id="ebQ-V3-Ne1" userLabel="Cell Image">
                                                     <rect key="frame" x="513" y="8" width="65" height="73"/>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
                                                         <rect key="frame" x="361" y="8" width="16" height="16"/>
@@ -340,11 +340,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="uNu-6d-dbY">
                         <nil key="title"/>
-                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="GalleryMe" textAlignment="center" minimumFontSize="17" id="nnj-U4-aBW">
+                        <textField key="titleView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="GalleryMe" textAlignment="center" minimumFontSize="17" id="nnj-U4-aBW">
                             <rect key="frame" x="180" y="2" width="240" height="40"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="34"/>
+                            <color key="textColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-MediumItalic" family="Helvetica Neue" pointSize="34"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="kAp-cS-Uz1">
@@ -816,7 +816,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="8559E40C-B88F-4D43-BA8E-F7237E9DE2E7" width="40" height="40">
+        <image name="F27083EE-810C-418B-8532-31AD27288307" width="40" height="40">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
