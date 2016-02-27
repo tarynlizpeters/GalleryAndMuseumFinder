@@ -146,7 +146,7 @@
                                                         <rect key="frame" x="26" y="8" width="327" height="38"/>
                                                     </variation>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="39241CAC-F4D2-4F90-AA64-DA48BDE90057" translatesAutoresizingMaskIntoConstraints="NO" id="ebQ-V3-Ne1" userLabel="Cell Image">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="F4FFA704-4E1F-4EBA-9479-80FCD90EA74D" translatesAutoresizingMaskIntoConstraints="NO" id="ebQ-V3-Ne1" userLabel="Cell Image">
                                                     <rect key="frame" x="513" y="8" width="65" height="73"/>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
                                                         <rect key="frame" x="361" y="8" width="16" height="16"/>
@@ -339,16 +339,25 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="uNu-6d-dbY">
-                        <barButtonItem key="rightBarButtonItem" image="map" id="j6g-yF-g3a">
-                            <connections>
-                                <action selector="changeMapType:" destination="cSu-9h-eUs" id="aJU-8r-9ge"/>
-                            </connections>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="kAp-cS-Uz1">
+                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="Hpx-Ab-5Fl">
+                                <rect key="frame" x="447" y="7" width="133" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                                <connections>
+                                    <action selector="MapView:" destination="cSu-9h-eUs" eventType="valueChanged" id="To0-ZM-JLy"/>
+                                </connections>
+                            </segmentedControl>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="googleMapView" destination="yBR-gf-qqx" id="3nh-vD-awt"/>
                         <outlet property="searchBar" destination="qKk-K3-f8C" id="Y9T-zG-il9"/>
                         <outlet property="searchDisplayController" destination="2bz-Xb-WnF" id="P5L-zY-umx"/>
+                        <outlet property="segmentControl" destination="Hpx-Ab-5Fl" id="T5C-XR-i0F"/>
                         <outlet property="tableView" destination="2nb-dh-wyU" id="94w-tf-voX"/>
                         <segue destination="rrM-Qt-Qrh" kind="show" identifier="toDetailViewController" id="1sf-pJ-xRY"/>
                     </connections>
@@ -396,7 +405,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="peoplebw" translatesAutoresizingMaskIntoConstraints="NO" id="Lb5-po-pOQ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="peoplebw" translatesAutoresizingMaskIntoConstraints="NO" id="Lb5-po-pOQ">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="414"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="414" id="75I-wN-yw8"/>
@@ -417,7 +426,7 @@
                                     <segue destination="Lfs-yU-Rwv" kind="presentation" identifier="toLoginSegue" id="r3B-Cp-eeb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n6f-5E-GqV">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n6f-5E-GqV">
                                 <rect key="frame" x="20" y="522" width="560" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -443,7 +452,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aa2-xO-RYl">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aa2-xO-RYl">
                                 <rect key="frame" x="20" y="475" width="560" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -798,7 +807,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="39241CAC-F4D2-4F90-AA64-DA48BDE90057" width="40" height="40">
+        <image name="F4FFA704-4E1F-4EBA-9479-80FCD90EA74D" width="40" height="40">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
@@ -1037,7 +1046,6 @@ hwCSAJQAlgCYAJ0AoACiAKQApgCoAK0AxADGAMg1qjWvNbo1wzXWNdo15TXuNfM1+zX+NgM2EjYWNh02
 JTYyNjc2OTY7NkA2SDZLNlA2WDZbNm02cDZ1AAAAAAAAAgEAAAAAAAAAPgAAAAAAAAAAAAAAAAAANnc
 </mutableData>
         </image>
-        <image name="map" width="30" height="30"/>
         <image name="peoplebw" width="1200" height="799"/>
         <image name="twitt2" width="300" height="300"/>
     </resources>

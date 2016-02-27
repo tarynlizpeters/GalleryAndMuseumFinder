@@ -21,6 +21,10 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
     
     @IBOutlet weak var searchBar: UISearchBar!
     
+    @IBOutlet var MapView: GMSMapView!
+    
+    @IBOutlet var segmentControl: UISegmentedControl!
+    
     var galleries = [NSDictionary]()
     
     var galleryArray = [Gallery]()
@@ -219,6 +223,20 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegat
     }
     
     // MARK Change Map Type View
+   
+    @IBAction func MapView(sender: UISegmentedControl) {
+        switch segmentControl.selectedSegmentIndex {
+        case 0:
+              self.googleMapView.mapType = GoogleMaps.kGMSTypeNormal
+        case 1:
+            self.googleMapView.mapType = GoogleMaps.kGMSTypeHybrid
+        default:
+            self.googleMapView.mapType = GoogleMaps.kGMSTypeNormal
+            
+        }
+    }
+    
+    
     
     @IBAction func changeMapType(sender: AnyObject) {
         let actionSheet = UIAlertController(title: "Map Types", message: "Select map type:", preferredStyle: UIAlertControllerStyle.ActionSheet)
